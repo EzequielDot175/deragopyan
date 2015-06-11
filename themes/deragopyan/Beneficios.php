@@ -49,6 +49,7 @@ get_header(); ?>
 		</div>
 		<div class="column2 mr">
 			<div class="data-container">
+				<div class="navigator">Beneficios > <span class="inside"></span></div>
 				<div class="beneficios-all">
 					<?php foreach(Beneficios::getData() as $k => $v): ?>
 					<div class="item-beneficio">
@@ -92,7 +93,12 @@ get_header(); ?>
 		</div>
 		<div class="column1 panel-buttons">
 			<div class="filter-btn" style="margin-top:0;">
-				<a id="back">TODOS LOS BENEFICIOS</a>
+				<a id="back">TODOS LOS BENEFICIOS 
+
+					<ul class="subsedes">
+						<?php Beneficios::getBeneficiosBySede(true) ?>
+					</ul>
+				</a>
 			</div>
 			
 		</div>
@@ -105,8 +111,12 @@ get_header(); ?>
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD4Up6VW3d1hL9aC5wk1E2APbW5_P-ZqxM&sensor=false">
 </script>
+
 <script>
 	jQuery(document).ready(function($) {
+
+
+
 		$('.item-beneficio').hover(function() {
 			$(this).children('.b-mask-bg').animate({opacity:1},500);
 			// console.log($(this).children('.b-mask').children());
@@ -117,10 +127,24 @@ get_header(); ?>
 			$(this).children('.b-mask-bg').animate({opacity:0},500);
 			$(this).children('.b-mask').children(".b-description").css('display', 'block');
 			$(this).children('.b-mask').children(".btn-beneficio").animate({top: "82px",opacity:0}, 500);
-
 		});
 
-		$('.btn-beneficio').click(function(event) {
+
+		// $(window).on('mouseenter', '.item-beneficio', function(event) {
+		// 	console.log('');
+		// 	$(this).children('.b-mask-bg').animate({opacity:1},500);
+		// 	$(this).children('.b-mask').children(".b-description").css('display', 'none');
+		// 	$(this).children('.b-mask').children(".btn-beneficio").animate({top: "14px",opacity:1}, 500);
+		// });
+		// $(window).on('mouseleave', '.item-beneficio', function(event) {
+		// 	console.log('');
+		// 	$(this).children('.b-mask-bg').animate({opacity:0},500);
+		// 	$(this).children('.b-mask').children(".b-description").css('display', 'block');
+		// 	$(this).children('.b-mask').children(".btn-beneficio").animate({top: "82px",opacity:0}, 500);
+		// });
+
+
+		$(document).on('click','.btn-beneficio',function(event) {
 			/* Act on the event */
 			var content = $(this).parent();
 			var data = {};
@@ -162,6 +186,55 @@ get_header(); ?>
 		$('#back').click(function(event) {
 			$('.beneficios-all').show();
 			$('.beneficio-by-id').hide();
+
+		});
+		$('#back').hover(function() {
+			$('.subsedes').addClass('visible');
+		}, function() {
+			setTimeout(function(){
+				$('.subsedes').removeClass('visible');
+			}, 5000);
+
+		});
+
+
+		$(document).on('click','li[id^="sede-beneficio-"]',function(event) {
+			var value = parseInt($(this).attr('id').replace(/sede-beneficio-/ig, ''));
+			var btn = $(this);
+			var navigate = btn.text().replace(/\(+[0-9].*\)/ig, '').trim();
+			$.post("/wp-admin/admin-ajax.php", {action: 'filterBySede',sede: value}, function(data, textStatus, xhr) {
+				var data = jQuery.parseJSON(data);
+				// if (data.length) {};
+				if (data.length > 0) {
+					$('.beneficios-all').empty();
+					$.each(data, function(index, val) {
+						var replace = [
+							{before: "#b-mask-bg", after: TemplateHTML.uploadDir+"beneficios/"+ val.foto},
+							{before: "#b-image", after: TemplateHTML.uploadDir+"beneficios/"+val.foto},
+							{before: "#b-logo", after: TemplateHTML.uploadDir+"beneficios/"+val.logo},
+							{before: "#b-title", after: val.nombre},
+							{before: "#b-description", after: val.descripcion_basica},
+							{before: "#b-id", after: val.id},
+							{before: "#b-l_description", after: val.descripcion_detallada},
+							{before: "#b-map", after: val.descripcion_basica},
+						];
+						$('.beneficios-all').append(TemplateHTML.onTemplate("beneficio",replace));
+					});
+					$('.item-beneficio').hover(function() {
+						$(this).children('.b-mask-bg').animate({opacity:1},500);
+						// console.log($(this).children('.b-mask').children());
+						$(this).children('.b-mask').children(".b-description").css('display', 'none');
+						$(this).children('.b-mask').children(".btn-beneficio").animate({top: "14px",opacity:1}, 500);
+						// b-description
+					}, function() {
+						$(this).children('.b-mask-bg').animate({opacity:0},500);
+						$(this).children('.b-mask').children(".b-description").css('display', 'block');
+						$(this).children('.b-mask').children(".btn-beneficio").animate({top: "82px",opacity:0}, 500);
+					});
+				};
+				$('.inside').text(navigate);
+				$('.navigator').css('display', 'block');
+			});
 		});
 	
 
@@ -171,4 +244,5 @@ get_header(); ?>
 
 <!-- END CONTENT -->
 <?php include 'pageFooter.php' ?>
+
 

@@ -23,6 +23,7 @@ if(!class_exists("Administracion")):
 			add_action("init", array($this,"removeRole") );
 			add_action("init", array($this,"setRoles") );
 			add_action("wp_print_scripts",array($this,"addScript") );
+			add_action("wp_print_scripts",array($this,"addScriptTemplate") );
 			add_action("wp_ajax_administradorP", array($this,"Ajax"));
 
             add_action("wp_ajax_detailsbyid_dir" , array($this,"getDetailsByIdDirectorio"));
@@ -54,6 +55,10 @@ if(!class_exists("Administracion")):
 					plugins_url("css/jquery-ui.theme.min.css", __FILE__ ));
 				
 			endif;
+		}
+		public function addScriptTemplate(){
+				wp_register_script("templates-plugin", plugins_url("js/templates.js", __FILE__ ) );
+				wp_enqueue_script("templates-plugin");
 		}
 		public function getDetailsByIdDirectorio()
 		{

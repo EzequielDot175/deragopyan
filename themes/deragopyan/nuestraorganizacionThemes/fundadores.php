@@ -50,6 +50,9 @@
 			<div class="filter-btn">
 				<a href="./organigrama">ORGANIGRAMA</a>
 			</div>
+			<div class="filter-btn">
+				<a href="../">VOLVER</a>
+			</div>
 		</div>
 	</div>
 </div>

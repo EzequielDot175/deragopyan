@@ -45,6 +45,13 @@
 				<input type="text" id="mapa_beneficio">
 				<select name="mapa_beneficio" id="results-google-maps" ></select>
 			</div>
+			<div class="sede-seleccion">
+				<label for="sede">Utilizar sede</label>
+				<input type="checkbox" name="sede-checkbox" id="sede-checkbox">
+				<select name="sede-seleccion-option" disabled id="sede-seleccion-option">
+					<?php sedes_deragopyan_options_fetch(); ?>
+				</select>
+			</div>
 			<div id="map_canvas" style="width:50%; height:500px"></div>
 
 		</fieldset>
@@ -88,6 +95,13 @@
 				var map = JSON.parse($(this).val());
 				Maps.setLocation(map.lat, map.lgn);
 			};
+		});
+		$('#sede-checkbox').change(function(event) {
+			if ($(this).prop("checked")) {
+				$('#sede-seleccion-option').removeAttr('disabled');
+			}else{
+				$('#sede-seleccion-option').attr('disabled','');
+			}
 		});
 		
 		

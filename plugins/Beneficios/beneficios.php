@@ -40,6 +40,8 @@ if (!class_exists("Beneficios")):
 			add_action("admin_menu", array($this,"addMenuBeneficios"));
 			add_action("wp_print_scripts", array($this,"scripts"));
 			add_action("wp_ajax_deletebeneficio", array($this,"delete"));
+			add_action("wp_ajax_filterBySede", array($this,"filterBySede"));
+			add_action("wp_ajax_filterBySede", array($this,"filterBySede"));
 		}
 		public static function activate(){}
 		public static function deactivate(){}
@@ -81,10 +83,34 @@ if (!class_exists("Beneficios")):
 			global $wpdb;
 			$wpdb->update($this->table,$this->update,array("id" => $this->id));
 		}
+		public static function getBeneficiosBySede($withHtml = false){
+			global $wpdb;
+			$sql = "SELECT 
+						wpsd.id,
+					    wpsd.name,
+					    COUNT(wpb.id) as cantidad
+					FROM
+						wp_sedes_degaropyan as wpsd
+					LEFT JOIN
+						wp_beneficios as wpb ON `wpb`.`sede-seleccion-option` = wpsd.id";
+			if ($withHtml) {
+				foreach($wpdb->get_results($sql) as $k => $v):
+					echo "<li id='sede-beneficio-".$v->id."'>".$v->name." (".$v->cantidad.")</li>";
+				endforeach;
+			}else{
+				return $wpdb->get_results($sql);
+			}
+
+		}
 		public function saveBeneficio(){
 			$vars = $_POST;
+
+			
 			if($vars["beneficios"] == 1):
 				unset($vars["beneficios"]);
+				if (isset($vars["sede-checkbox"])):
+					unset($vars["sede-checkbox"]);
+				endif;
 				foreach($vars as $k => $v):
 					$this->insert[$k] = sanitize_text_field($v);
 				endforeach;
@@ -192,6 +218,15 @@ if (!class_exists("Beneficios")):
 		}
 		public function edit(){
 			require $plugin."/inc/edit.php";
+		}
+		public function filterBySede(){
+			if(isset($_POST["sede"])):
+				global $wpdb;
+				$id = (int)$_POST["sede"];
+				$sql = "SELECT * FROM `wp_beneficios` WHERE `sede-seleccion-option`= ".$id;
+				echo json_encode($wpdb->get_results($sql));
+			endif;
+			die();
 		}
 	}
 endif;

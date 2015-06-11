@@ -5,33 +5,33 @@
         if ($_POST["sedes_deragopyan_submit"] == 1) {
 
 
-            echo "<pre>";
-            print_r($_POST);
-            echo "</pre>";
-            // $nombre_sede = sanitize_text_field($_POST["nombre_sede"]);
-            // $email_sede = sanitize_text_field($_POST["email_sede"]);
-            // $horarios = $_POST["horarios"];
-            // $MediosDeContacto = serialize($_POST["MediosDeContacto"]);
-            // $maps =  $_POST["google_maps_ubication"];
-            // $dir = wp_upload_dir();
-            // $files = $_FILES["image_sede"];
-            // $image_name = ( !empty($files["name"]) ? $files["name"] : "sedes-default.png");
+            // echo "<pre>";
+            // print_r($_POST);
+            // echo "</pre>";
+            $nombre_sede = sanitize_text_field($_POST["nombre_sede"]);
+            $email_sede = sanitize_text_field($_POST["email_sede"]);
+            $horarios = $_POST["horarios"];
+            $MediosDeContacto = serialize($_POST["MediosDeContacto"]);
+            $maps =  $_POST["google_maps_ubication"];
+            $dir = wp_upload_dir();
+            $files = $_FILES["image_sede"];
+            $image_name = ( !empty($files["name"]) ? $files["name"] : "sedes-default.png");
 
-            // if($image_name != "sedes-default.png"):
-            // move_uploaded_file($files["tmp_name"], $dir["basedir"]."/sedes/".$files["name"]);
+            if($image_name != "sedes-default.png"):
+            move_uploaded_file($files["tmp_name"], $dir["basedir"]."/sedes/".$files["name"]);
               
-            // endif;
+            endif;
 
-            // global $wpdb;
-            // $sql = "INSERT INTO 
-            //           ".$wpdb->prefix."sedes_degaropyan 
-            //         (name,image,horarios,mediosdecontacto,maps) 
-            //           VALUES 
-            //         ('".$nombre_sede."','".$image_name."','".$horarios."','".$MediosDeContacto."','".$maps."')";
-            // $query = $wpdb->query($sql);
-            // if ($query) {
-            //   $finish = true;
-            // }
+            global $wpdb;
+            $sql = "INSERT INTO 
+                      ".$wpdb->prefix."sedes_degaropyan 
+                    (name,image,horarios,mediosdecontacto,maps) 
+                      VALUES 
+                    ('".$nombre_sede."','".$image_name."','".$horarios."','".$MediosDeContacto."','".$maps."')";
+            $query = $wpdb->query($sql);
+            if ($query) {
+              $finish = true;
+            }
         }
     }
 ?>
