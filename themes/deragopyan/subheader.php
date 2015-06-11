@@ -49,9 +49,7 @@
 
 <div class="subMenuFixed">
 		<div class="cont-center">
-			<div class="logo-small">
-				
-			</div>
+			<a href="<?php echo get_site_url(); ?>"><div class="logo-small"></div></a>
 			<div class="menufixed">
 				<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
 			</div>
