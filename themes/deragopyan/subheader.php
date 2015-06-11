@@ -8,7 +8,7 @@
 			<?php get_search_form(); ?>
 		</div>
 		<div class="logo">
-			<img src="<?php echo(IMG) ?>deragopyan.png" alt="logo">
+			<a href="<?php echo get_site_url(); ?>"><img src="<?php echo(IMG) ?>deragopyan.png" alt="logo"></a>
 		</div>
 		<div class="nav">
 			<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
