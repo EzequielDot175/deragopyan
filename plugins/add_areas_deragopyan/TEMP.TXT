@@ -1,0 +1,4 @@
+DIRECTORIO
+	METODOLOGIA DE EDICION Y BORRADO
+	+	listado con las acciones al lado, tabla de 3 columnas
+	+ 	agregar un input para enviar con mensaje rapido a la persona de contacto FRONT

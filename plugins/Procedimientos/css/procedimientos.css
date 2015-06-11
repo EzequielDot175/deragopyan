@@ -1,0 +1,2 @@
+@charset "UTF-8";html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}.procedimientos-main{max-width:100%;margin-left:auto;margin-right:auto}.procedimientos-main::after{clear:both;content:"";display:table}.procedimientos-main .front{width:100%;display:table;width:100%;table-layout:fixed}.procedimientos-main .front .left{display:table-cell;width:25%}.procedimientos-main .front .right{display:table-cell;width:75%}.procedimientos-main .front .right .submenu{display:table-cell;width:100%}
+/*# sourceMappingURL=procedimientos.css.map */

@@ -1,0 +1,27 @@
+.plugin-container{
+	background: white;
+	padding:3em;
+}
+
+.plugin-container{
+	&.beneficios{
+		.lista-beneficios > li{
+			display: inline-block;
+			width: 250px;
+			height: 80px;
+			span,a{
+				vertical-align: top;
+			}
+
+		}
+		.controls{
+			a{
+				background: #0074A2;
+				padding: 1em;
+				display: inline-block;
+				color: white;
+				border-radius: 1em;
+			}
+		}
+	}
+}

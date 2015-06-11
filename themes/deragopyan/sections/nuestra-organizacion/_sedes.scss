@@ -1,0 +1,76 @@
+.data-container{
+	.sede-column{
+		width: 304px;
+		height: 100%;
+		margin: 0 auto;
+
+		img{
+			height: 188px;
+			width: 100%;
+			background: rgba(white, 0.5);
+		}
+		.sede-details{
+			height: 217px;
+			background: rgba(white, 0.2);
+			position: relative;
+  			top: -3px;
+		}
+
+	}
+	.sede-selection{
+		cursor: pointer;
+		padding-top: 47px;
+		width: 384px;
+		margin: 0 auto;
+		height: 100%;
+		.sede-item-selection{
+			width: 116px;
+			height: 122.5px;
+			float: left;
+			margin-right: 18px;
+			margin-bottom: 16px;
+			background: rgba(white, 0.7);
+			background-color: rgba(white, 0.7);
+
+			&.last{
+				margin-right: 0;
+			}
+			.item-sede-image{
+				height: 74px;
+				float: left;
+				width: 100%;
+				&.default-image{
+					background-repeat: no-repeat!important;
+  					background-position: 50%!important;
+				}
+				&.nodefault-image{
+					background-size: cover;
+				}
+				// background-color: rgba(white, 0.7);
+			}
+			.item-sede-title{
+				float: left;
+				height: 49px;
+				width: 100%;
+				h4{
+					margin: 0;
+					margin-top: 8px;
+					font-family: Times_italic;
+					font-style: italic;
+					font-size: 13px;
+					color: #7C6B6B;			
+					text-align: center;
+				}
+
+			}
+
+		}
+	}
+}
+
+
+#organi{
+	img{
+		width: 155px;
+	}
+}

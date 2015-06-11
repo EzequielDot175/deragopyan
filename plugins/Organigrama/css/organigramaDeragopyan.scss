@@ -1,0 +1,60 @@
+@import 'bourbon/bourbon'; 
+
+.organi-panel-admin{
+	background: white;
+	h1{
+		padding: 1em;
+		margin: 0;
+	}
+	h3{
+		text-align: center;
+	}
+	.btn-link{
+		  display: block;
+		  padding: 1.3em;
+		  margin: 1em auto;
+		  background: #00A4E1;
+		  color: white;
+		  font-weight: bold;
+		  border-radius: 1em;
+		  width: 200px;
+	}
+	.organi-controls{
+		padding: 2em;
+		.filtro{
+			border: 1px solid #D3D3D3;
+			padding: 2em;
+			label{
+				display: inline-block;
+				padding-top: 1em;
+				padding-bottom: 1em;
+			}
+		}
+	}
+
+	.panel{
+		display: table;
+		width: 95%;
+		margin: 0 auto;
+		.menu{
+			background: #222222;
+			color: white;
+			font-weight: bold;
+			.cell{
+				border-bottom: none!important;
+			}
+		}
+		.row{
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			display: table-row;
+			.cell{
+				display: table-cell;
+				border-bottom: 1px solid #D3D3D3;
+			}
+		}
+	}
+	
+	
+}

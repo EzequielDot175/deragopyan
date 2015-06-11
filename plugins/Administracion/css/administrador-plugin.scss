@@ -1,0 +1,87 @@
+meta.foundation-data-attribute-namespace {
+  font-family: false; }
+.admin-proc-roles{
+	background: white;
+	h3{
+		padding: 1em;
+	}
+	.table-users{
+		display: table;
+		width: 100%;
+		.labels{
+			display: table-row;
+			.name,.username,.rol,.controls{
+				display: table-cell;
+				width: 25%;
+				text-align: center;
+			}
+			&.menu{
+				.name,.username,.rol,.controls{
+					padding: 1em;
+					color: white;
+					border-right: 1px solid white;
+					background: rgba(#282828, 0.8);
+					background-color: rgba(#282828, 0.8);
+					font-weight: bold;
+					
+				}
+			}
+			&.fetch{
+				.name,.username,.rol,.controls{
+					padding:0.5em;
+					span{
+						text-transform: uppercase;
+					}
+				}
+				.btn-details{
+					  color: white;
+					  border: 1px solid black;
+					  background: #525252;
+					  padding: 0.5em;
+					  border-radius: 5px;
+					  cursor: pointer;
+				}
+			}
+		}
+	}
+	.display-details{
+		display: none;
+		width: 80%;
+		margin: 0 auto;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.current-username{
+			text-align: center;
+			background: rgba(#282828, 0.8);
+			background-color: rgba(#282828, 0.8);
+			color: white;
+		}
+		.fetch-areas{
+			ul{
+				li{
+					display: inline-block;
+					border: 1px solid #C3C3C3;
+					padding: 1em;
+					border-radius: 10px;
+				}
+			}
+			.save-proc-rol{
+				display: block;
+				margin: 0 auto;
+				padding: 12px;
+				background: #9FD3E8;
+				color: white;
+				border: 1px solid #7BC1DF;
+				border-radius: 5px;
+				cursor: pointer;
+				font-weight: bold;
+				&.success{
+					background: #6DEDAD;
+ 					border: 1px solid #6DEDAD;
+ 					display: none;
+				}
+			}
+		}
+		
+	}
+}

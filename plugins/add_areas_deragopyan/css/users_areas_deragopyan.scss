@@ -1,0 +1,60 @@
+.agrega-areas-deragopyan{
+	padding: 3em;
+	background: #FFFFFF;
+	width: 98%;
+	h1{
+		padding-top: 2em;
+		padding-bottom: 2em;
+	}
+	div{
+		form{
+			select{
+				text-transform: uppercase;
+				.hidden{display:none}
+			}
+			.success{background-color: #D9FF9F;color: #579100;padding:0.5em;display: none;width: 300px;}
+
+		}
+	}
+	.table{
+		text-align: center;
+		display: table;
+		width: 98%;
+		padding-top: 0;
+		.row{
+			display: table-row;
+			padding: 1em;
+			.cell{
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+				display: table-cell;
+				&.id{ width: 20% ;}
+				&.username{ width:20%}
+				&.categoria{ width:20%}
+				&.area{ width:20%}
+				&.status{width: 20%}
+			}
+		}
+		&.menu{
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			background: #575757;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+		}
+		&.results{
+			.row{
+				.cell{
+					border-bottom: 1px solid #D3D3D3;
+				}
+			}
+		}
+	}
+	.list{
+		button.save{
+			display: none;
+		}
+	}
+
+}

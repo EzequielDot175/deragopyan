@@ -1,0 +1,19 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+.procedimientos-main{
+ 	@include outer-container(100%);
+ 	.front {
+ 		@include fill-parent;
+ 		@include row(table);
+
+ 		.left {
+ 			@include span-columns(3);	
+ 		}
+ 		.right {
+ 			@include span-columns(9);	
+ 			.submenu {
+ 				@include span-columns(12);	
+ 			}
+ 		}
+ 	}
+}

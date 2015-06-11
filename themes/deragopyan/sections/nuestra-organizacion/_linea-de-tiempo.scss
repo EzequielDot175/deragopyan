@@ -1,0 +1,86 @@
+.nuestra-organizacion{
+	.linea-de-tiempo{
+		// Linea central
+		#cd-timeline{
+			margin-top: 0;
+			padding-top: 0;
+			&:before{
+				display: none;
+			}
+		}
+
+		// YEAR
+		.cd-timeline-block.year-timeline{
+			font-family: Brandom_grotesque_light;
+			font-size: 29px;
+			height: 36px;
+			line-height: 36px;
+			width: 122px;
+			border: 0;
+			border-radius: 0;
+			background: rgba(#B1005D, 0.4);
+			background-color: rgba(#B1005D, 0.4);
+			position: relative;
+			&:before{
+				content: "";
+				top: 100%;
+				left: 0;
+				border-top: 9px solid rgba(#B1005D, 0.4);
+				border-bottom: 5px solid transparent;
+				border-left: 61px solid transparent;
+				border-right: 61px solid transparent;
+				position: absolute;
+			}
+		}
+		// DATE TIME
+		.cd-date{
+			font-family: Brandom_grotesque_bold;
+			color: white!important;
+			opacity: 1;
+			left: 0!important;
+			font-size: 18px!important;
+			top: -32px;
+			text-align: center!important;
+		}
+		.cd-timeline-content{
+			width: 100%;
+			background: rgba(white, 0.7);
+			&:before{
+				display: none;
+			}
+			h2{
+				color: #B1005D;
+				text-transform: uppercase;
+				font-size: 13px;
+				font-family: Brandom_grotesque_black;
+			}
+			p{
+				font-family: Brandom_grotesque_regular;
+				color: #7C6B6B;
+			}
+		}
+		.cd-timeline-img.cd-picture{
+			display: none;
+		}
+		.cd-timeline-block{
+			margin: 0 auto;
+			margin-top: 43px;
+			margin-bottom: 46px;
+			width: 360px;
+		}
+	}
+}
+
+.years-of-line{
+	background: rgba(white, 0.2);
+	background-color: rgba(white, 0.2);
+	font-family: Brandom_grotesque_light;
+	font-size: 25px;
+	color: white;
+	.year{
+		// border-top: 1px dashed rgba(white, 0.2);
+		text-align: center;
+		cursor: pointer;
+		
+	}
+}

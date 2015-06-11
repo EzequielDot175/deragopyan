@@ -1,0 +1,230 @@
+/*-------------------------------------------------------------------------
+
+   Plugin Name: Easy Team Manager
+   Description: Easy Team Manager helps you to create team members with their short descriptions. You can add and manage their image, social profile's links, short description along with their name and postion in your commpany.
+   Version: 1.2.0
+   Plugin URI: http://www.jwthemes.com
+   Author: JW Themes
+   Author URI: http://www.jwthemes.com
+   License: Under GPL2
+
+--------------------------------------------------------------------------*/
+a, a:hover, a:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+/* Style for Admin */
+.jw_admin_wrap {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 25px;
+  color: #3D566E;
+  margin-right: 15px;
+}
+
+.jw_admin_wrap h2 {
+  color: #3D566E;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+.jw_admin_wrap h3 {
+  color: #3D566E;
+  line-height: normal;
+}
+
+.jw_admin_wrap h3 code {
+  padding: 5px 20px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.form-sede-deragopyan input[type=file] {
+  display: none;
+}
+
+.jw_admin_wrap .success {
+  font-weight: bold;
+  color: #008040;
+  font-size: 1.5em;
+  background: #C6FFE2;
+  padding: 1em;
+}
+
+.form-sede-deragopyan .image {
+  padding: 1em;
+}
+.form-sede-deragopyan .image img {
+  height: 200px;
+  width: 200px;
+}
+.form-sede-deragopyan .image button {
+  vertical-align: top;
+  display: block;
+  width: 200px;
+}
+.form-sede-deragopyan .maps {
+  padding: 1em;
+}
+.form-sede-deragopyan .maps input {
+  width: 30%;
+  padding: 1em;
+  border-radius: 0.3em;
+}
+.form-sede-deragopyan .horarios {
+  padding: 1em;
+}
+.form-sede-deragopyan .horarios .row1, .form-sede-deragopyan .horarios .row2 {
+  width: 49%;
+  display: inline-block;
+}
+.form-sede-deragopyan .horarios .row1 {
+  width: 30%;
+}
+.form-sede-deragopyan .horarios .row1 .hora span {
+  background: #272822;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.3em;
+  vertical-align: middle;
+}
+.form-sede-deragopyan .horarios .row1 .hora button {
+  display: block;
+  margin: 1em;
+  margin-left: 0;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column1, .form-sede-deragopyan .horarios .row1 .dias .column2 {
+  width: 30%;
+  display: inline-block;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column1 ul, .form-sede-deragopyan .horarios .row1 .dias .column2 ul {
+  border: 1px solid black;
+  border-radius: 0.4em;
+  padding: 1em;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column1 ul li, .form-sede-deragopyan .horarios .row1 .dias .column2 ul li {
+  padding: 0.3em;
+  padding-left: 1em;
+  font-weight: bold;
+  transition: background 0.8s;
+  -webkit-transition: background 0.8s;
+  -moz-transition: background 0.8s;
+  -o-transition: background 0.8s;
+  cursor: pointer;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column1 ul li:hover, .form-sede-deragopyan .horarios .row1 .dias .column2 ul li:hover {
+  background: #19B698;
+  color: white;
+}
+.form-sede-deragopyan .horarios .row1 .dias button {
+  display: block;
+  margin-bottom: 1em;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column2 {
+  vertical-align: top;
+}
+.form-sede-deragopyan .horarios .row1 .dias .column2 ul li {
+  display: none;
+}
+.form-sede-deragopyan .horarios .row1 .dias .perRange {
+  margin-bottom: 1em;
+}
+.form-sede-deragopyan .horarios .row1 .dias .perRange button {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-top: 1em;
+}
+.form-sede-deragopyan .horarios .row2 {
+  vertical-align: top;
+}
+.form-sede-deragopyan .horarios .row2 .hora, .form-sede-deragopyan .horarios .row2 .dias, .form-sede-deragopyan .horarios .row2 .rangeDays {
+  vertical-align: top;
+  display: inline-block;
+}
+.form-sede-deragopyan .horarios .row2 .hora span, .form-sede-deragopyan .horarios .row2 .dias span, .form-sede-deragopyan .horarios .row2 .rangeDays span {
+  background: #19B698;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.3em;
+  border-radius: 0.5em;
+  margin-bottom: 5px;
+}
+.form-sede-deragopyan .horarios .row2 .definidos div {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1em;
+  border: 1px solid;
+  margin: 5px;
+  border-radius: 10px;
+}
+.form-sede-deragopyan .medios {
+  width: 50%;
+}
+.form-sede-deragopyan .medios input {
+  width: 80%;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.form-sede-deragopyan .hidden {
+  display: none;
+}
+.form-sede-deragopyan .buttonDiv {
+  display: block;
+  width: 60%;
+  padding: 1em;
+  border: 1px solid #14947A;
+  cursor: pointer;
+  color: #14947A;
+  background: #D3FAF2;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  outline: #D3FAF2;
+}
+
+.sedes-degaropyan-box {
+  border: 1px solid #979A9F;
+  display: inline-block;
+  padding: 1em;
+  padding-top: 0;
+  height: 400px;
+  vertical-align: top;
+}
+.sedes-degaropyan-box h4 {
+  text-align: center;
+  margin: 0;
+  padding: 1em;
+}
+.sedes-degaropyan-box p {
+  text-align: center;
+}
+.sedes-degaropyan-box p span {
+  font-weight: bold;
+  text-align: left;
+}
+.sedes-degaropyan-box img {
+  height: 200px;
+  width: 200px;
+}
+.sedes-degaropyan-box .medios {
+  height: 120px;
+  overflow: auto;
+}
+.sedes-degaropyan-box .controls {
+  text-align: center;
+}
+
+.especialidades select {
+  width: 400px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=sedes_degaropyan_style-admin.css.map */

@@ -1,0 +1,218 @@
+/*-------------------------------------------------------------------------
+
+   Plugin Name: Easy Team Manager
+   Description: Easy Team Manager helps you to create team members with their short descriptions. You can add and manage their image, social profile's links, short description along with their name and postion in your commpany.
+   Version: 1.2.0
+   Plugin URI: http://www.jwthemes.com
+   Author: JW Themes
+   Author URI: http://www.jwthemes.com
+   License: Under GPL2
+
+--------------------------------------------------------------------------*/
+a,a:hover,a:focus{text-decoration:none; outline:0;}
+
+/* Style for Admin */
+.jw_admin_wrap{background:#fff; padding:15px; border:1px solid #ddd; border-radius:4px; margin-top:25px; color:#3D566E; margin-right:15px;}
+.jw_admin_wrap h2{color:#3D566E; border-bottom:1px solid #e5e5e5; padding-bottom:10px; font-size:22px;}
+.jw_admin_wrap h3{color:#3D566E;line-height:normal;}
+.jw_admin_wrap h3 code{padding:5px 20px; border-radius:3px; font-size:14px; font-weight:300;}
+.form-sede-deragopyan input[type=file]{
+	display: none;
+}
+.jw_admin_wrap{
+	.success{
+		font-weight: bold;
+		color: #008040;
+		font-size: 1.5em;
+		background: #C6FFE2;
+		padding: 1em;
+	}
+}
+.form-sede-deragopyan{
+	.image{
+		padding: 1em;
+		img{
+			height: 200px;
+			width: 200px;
+		}
+		button{
+			vertical-align: top;
+			display: block;
+			width: 200px;
+		}
+	}
+	.maps{
+		padding: 1em;
+		input{
+			width: 30%;
+			padding: 1em;
+			border-radius: 0.3em;
+		}
+	}
+	.horarios{
+		padding: 1em;
+		.row1,.row2{
+			width: 49%;
+			display: inline-block;
+		}
+		.row1{
+			width: 30%;
+			.hora{
+				span{
+					background: #272822;
+					color: white;
+					font-weight: bold;
+					display: inline-block;
+					padding: 0.3em;
+					vertical-align: middle;
+				}
+				button{
+					display: block;
+					margin: 1em;
+					margin-left: 0;
+				}
+			}
+			.dias{
+				.column1,.column2{
+					width: 30%;
+					display: inline-block;
+					ul{
+						border: 1px solid black;
+						border-radius: 0.4em;
+						padding: 1em;
+						li{
+							padding: 0.3em;
+							padding-left: 1em;
+							font-weight: bold;
+							transition: background 0.8s;
+							-webkit-transition: background 0.8s;
+							-moz-transition: background 0.8s;
+							-o-transition: background 0.8s;
+							cursor: pointer;
+							&:hover{
+								background: #19B698;
+								color: white;
+							}
+						}
+					}
+
+				}
+				button{
+					display: block;
+					margin-bottom: 1em;
+				}
+				.column2{
+					vertical-align: top;
+					ul{
+						li{
+						display: none;
+						}
+					}
+				}
+				.perRange{
+					margin-bottom: 1em;
+					button{
+						display: inline-block;
+						padding: 0;
+						margin: 0;
+						margin-top: 1em;
+					}
+				}
+			}
+
+
+		}
+		.row2{
+			vertical-align: top;
+			.hora, .dias, .rangeDays{
+				vertical-align: top;
+				display: inline-block;
+				span{
+					background: #19B698;
+					color: white;
+					display: inline-block;
+					font-weight: bold;
+					padding: 0.3em;
+					border-radius: 0.5em;
+					margin-bottom: 5px;
+				}
+			}
+			.definidos{
+				div{
+					display: inline-block;
+					vertical-align: top;
+					padding: 1em;
+					border: 1px solid;
+					margin: 5px;
+					border-radius: 10px;
+				}
+			}
+			
+		}
+	}
+	.medios{
+		width: 50%;
+		input{
+			width: 80%;
+			margin-left: 1em;
+			margin-bottom: 1em;
+		}
+	}
+	.hidden{
+		display: none;
+	}
+	.buttonDiv{
+		display: block;
+		width: 60%;
+		padding: 1em;
+		border: 1px solid #14947A;
+		cursor: pointer;
+		color: #14947A;
+		background: #D3FAF2;
+		font-weight: bold;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		outline: #D3FAF2;
+	}
+
+}
+
+.sedes-degaropyan-box{
+	border: 1px solid #979A9F;
+	display: inline-block;
+	padding: 1em;
+	padding-top: 0;
+	height: 400px;
+	vertical-align: top;
+	h4{
+		text-align: center;
+		margin: 0;
+		padding: 1em;
+	}
+	p{
+		text-align: center;
+		span{
+			font-weight: bold;
+			text-align: left;
+		}
+	}
+	img{
+		height: 200px;
+		width: 200px;
+	}
+	.medios{
+		height: 120px;
+		overflow: auto;
+	}
+	.controls{
+		text-align: center;
+	}
+}
+
+
+.especialidades{
+	select{
+		width: 400px;
+  		text-align: center;
+	}
+}

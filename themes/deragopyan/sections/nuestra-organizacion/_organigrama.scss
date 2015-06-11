@@ -1,0 +1,44 @@
+#organi{
+	background: rgba(white, 0.2);
+	background-color: rgba(white, 0.2);
+	padding-top: 43px;
+	padding-bottom: 3em;
+
+	img{
+		height: 155px;
+		height: 97px;
+		padding: 0;
+		background-size: cover!important;
+	}
+	.boxorgani{
+		width: 155px;
+		background: rgba(white, 0.8);
+		background-color: rgba(white, 0.8);
+		position: relative;
+		padding: 0;
+		&:before{
+			content: "";
+			border-top: 5px solid rgba(white, 0.8);
+			border-bottom: 5px solid transparent;
+			border-left: 5.5px solid transparent;
+			border-right: 5.5px solid transparent;
+			top: 100%;
+			left: 48%;
+			position: absolute;
+		}
+		h3{
+			padding-top: 19px;
+			padding-bottom: 10px;
+			text-align: center;
+			font-family: Brandom_grotesque_medium;
+			color: #918B85;
+			font-size: 11px;
+		}
+	}
+	.google-visualization-orgchart-linebottom,.google-visualization-orgchart-lineright,.google-visualization-orgchart-lineleft{
+		border-color: rgba(white, 0.5);
+		padding: 10px;
+
+	}
+
+}

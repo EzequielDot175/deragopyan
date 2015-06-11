@@ -1,0 +1,82 @@
+
+.nuestra-organizacion{
+
+	.data-container{
+		margin-top: 0!important;
+	}
+	.mvv{
+		height: 179px;
+		background: url(img/mvv.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	.row-1{
+		width: 451px;
+		margin-top: 3px;
+		float: left;
+		color: white;
+		h1,h2,h3,h4{
+			font-family: Brandom_grotesque_light;
+		}
+		p{
+			padding-left: 43px;
+			font-family: Brandom_grotesque_regular;
+		}
+	}
+	.row-2{
+		float: left;
+		margin-left: 3px;
+		margin-top: 3px;
+		width: 218.498px;
+
+		.btn-big{
+			height: 83px;
+			border-radius: 5px;
+			a{
+				display: block;
+				text-align: center;
+				font-family: Brandom_grotesque_regular;
+				color: #918B85;
+				height: 100%;
+				text-decoration: none;
+				background: rgba(white, 0.6);
+				background-color: rgba(white, 0.6);
+				padding-top: 21px;
+				padding-left: 17px;
+				padding-right: 47px;
+				font-size: 13px;
+				border-radius: 5px;
+			}
+		}
+		.btn-small{
+			width: 218px;
+			height: 42px;
+			margin-top: 1px;
+			&:first-child{margin-top: 2px}
+			background: rgba(white, 0.3);
+			position: relative;
+			cursor: pointer;
+
+			a{
+				text-decoration: none;
+				.box{
+					width: 29px;
+					height: 22px;
+					background: rgba(white, 0.2);
+					position: absolute;
+					left: 14px;
+					top: 8px;
+				}
+				p{
+					margin: 0;
+					line-height: 42px;
+					padding-left: 50px;
+					font-family: Brandom_grotesque_bold;
+					font-size: 12px;
+					color: rgba(white, 0.7);
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
