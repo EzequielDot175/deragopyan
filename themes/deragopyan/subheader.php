@@ -29,6 +29,8 @@
 			<img src="<?php echo(IMG); ?>/shutdown.png" alt="shutdown">
 		</a>
 	</div>
+
+	
 	<div class="cell two">
 		
 	</div>
