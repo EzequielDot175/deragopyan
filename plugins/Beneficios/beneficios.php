@@ -94,8 +94,11 @@ if (!class_exists("Beneficios")):
 					LEFT JOIN
 						wp_beneficios as wpb ON `wpb`.`sede-seleccion-option` = wpsd.id";
 			if ($withHtml) {
+				
 				foreach($wpdb->get_results($sql) as $k => $v):
-					echo "<li id='sede-beneficio-".$v->id."'>".$v->name." (".$v->cantidad.")</li>";
+					if(!empty($v->id)):
+						echo "<li id='sede-beneficio-".$v->id."'>".$v->name." (".$v->cantidad.")</li>";
+					endif;
 				endforeach;
 			}else{
 				return $wpdb->get_results($sql);

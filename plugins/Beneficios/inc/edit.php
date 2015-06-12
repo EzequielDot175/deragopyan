@@ -50,6 +50,13 @@
 				<input type="text" id="mapa_beneficio" placeholder="Buscar">
 				<select name="mapa_beneficio" id="results-google-maps" ></select>
 			</div>
+			<div class="sede-seleccion">
+				<label for="sede">Utilizar sede</label>
+				<input type="checkbox" name="sede-checkbox" id="sede-checkbox">
+				<select name="sede-seleccion-option" disabled id="sede-seleccion-option">
+					<?php sedes_deragopyan_options_fetch(); ?>
+				</select>
+			</div>
 			<div id="map_canvas" style="width:50%; height:500px"></div>
 
 		</fieldset>
@@ -71,47 +78,61 @@
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 
-		var LatLng = JSON.parse($('#currentMap').val().replace(/\\/ig, ''));
 
+		var currentMap = $('#currentMap').val() || null;
+
+		if (currentMap != null) {
+		var LatLng = JSON.parse($('#currentMap').val().replace(/\\/ig, '')) || null;
 		console.log(LatLng);
-		var mapOptions = {
-	          center: new google.maps.LatLng(LatLng.lat, LatLng.lgn),
-	          zoom: 14,
-	          mapTypeId: google.maps.MapTypeId.ROADMAP
-	        };
+
+			var mapOptions = {
+		          center: new google.maps.LatLng(LatLng.lat, LatLng.lgn),
+		          zoom: 14,
+		          mapTypeId: google.maps.MapTypeId.ROADMAP
+		        };
+				Mapa = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
+			var marker = new google.maps.Marker({position:new google.maps.LatLng(LatLng.lat, LatLng.lgn)});
+	            marker.setMap(Mapa);
+
+	        $.get('http://maps.googleapis.com/maps/api/geocode/json?latlng=-34.3220787,-58.7814407&sensor=false', function(data) {
+	        	$('#nombre_mapa_actual').val(data.results[0].formatted_address);
+	        });
+		}else{
+			var mapOptions = {
+			    zoom: 4,
+			    center: new google.maps.LatLng(-38.942317,-64.3240181)
+			  };
 			Mapa = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
-		var marker = new google.maps.Marker({position:new google.maps.LatLng(LatLng.lat, LatLng.lgn)});
-            marker.setMap(Mapa);
+		}
 
-        $.get('http://maps.googleapis.com/maps/api/geocode/json?latlng=-34.3220787,-58.7814407&sensor=false', function(data) {
-        	$('#nombre_mapa_actual').val(data.results[0].formatted_address);
-        });
-
-        $('#mapa_beneficio').keyup(function(event) {
-			var find = encodeURI($(this).val());
-			if (find != "" && find.length > 4) {
-					$.get('http://maps.googleapis.com/maps/api/geocode/json?address='+find+',+AR&sensor=false', function(data) {
-						$('#results-google-maps').empty();
-						$('#results-google-maps').append('<option value="" selected>Seleccione alguno de los resultados</option>');
-						$.each(data.results, function(index, val) {
-							var dataEncode = {lat: val.geometry.location.lat, lgn: val.geometry.location.lng};
-							$('#results-google-maps').append('<option value='+JSON.stringify(dataEncode)+'>'+val.formatted_address+'</option>');
+	        $('#mapa_beneficio').keyup(function(event) {
+				var find = encodeURI($(this).val());
+				if (find != "" && find.length > 4) {
+						$.get('http://maps.googleapis.com/maps/api/geocode/json?address='+find+',+AR&sensor=false', function(data) {
+							$('#results-google-maps').empty();
+							$('#results-google-maps').append('<option value="" selected>Seleccione alguno de los resultados</option>');
+							$.each(data.results, function(index, val) {
+								var dataEncode = {lat: val.geometry.location.lat, lgn: val.geometry.location.lng};
+								$('#results-google-maps').append('<option value='+JSON.stringify(dataEncode)+'>'+val.formatted_address+'</option>');
+							});
+							searched = true;
 						});
-						searched = true;
-					});
-				};
-		});
-		$('#results-google-maps').on('change', function(event) {
-			event.preventDefault();
+					};
+			});
+			$('#results-google-maps').on('change', function(event) {
+				event.preventDefault();
+				
+				var latlng = JSON.parse($(this).val());
+				var marker = new google.maps.Marker({position:new google.maps.LatLng(latlng.lat, latlng.lgn)});
+
+
+				Mapa.setCenter(new google.maps.LatLng(latlng.lat, latlng.lgn));
+				marker.setMap(Mapa);
+				console.log(marker);
+			});
+
 			
-			var latlng = JSON.parse($(this).val());
-			var marker = new google.maps.Marker({position:new google.maps.LatLng(latlng.lat, latlng.lgn)});
-
-
-			Mapa.setCenter(new google.maps.LatLng(latlng.lat, latlng.lgn));
-			marker.setMap(Mapa);
-			console.log(marker);
-		});
+		
 		
 	});
 </script>

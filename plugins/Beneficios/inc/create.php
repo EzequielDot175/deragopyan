@@ -72,7 +72,11 @@
 </script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		var Maps = new googleMapsApi("map_canvas");
+		var mapOptions = {
+			    zoom: 6,
+			    center: new google.maps.LatLng(-38.942317,-64.3240181)
+			  };
+		Mapa = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
 		var timeCount = 0;
 		var find = "";
 		$('#mapa_beneficio').keyup(function(event) {
@@ -93,7 +97,17 @@
 		$('#results-google-maps').change(function(event) {
 			if ($(this).val() != "") {
 				var map = JSON.parse($(this).val());
-				Maps.setLocation(map.lat, map.lgn);
+				// Maps.setLocation(map.lat, map.lgn);
+				// new google.maps.LatLng(map.lat,map.lgn)
+				var latlng = new google.maps.LatLng(-38.942317,-64.3240181);
+				var marker = new google.maps.Marker({
+	                 map: Mapa,
+	                 zoom: 10,
+	                 position: latlng,
+	                 title: 'Hello World!'
+	             });
+				marker.setMap(Mapa);
+
 			};
 		});
 		$('#sede-checkbox').change(function(event) {

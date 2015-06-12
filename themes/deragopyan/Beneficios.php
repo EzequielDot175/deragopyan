@@ -246,3 +246,6 @@ get_header(); ?>
 <?php include 'pageFooter.php' ?>
 
 
+
+
+<?php Beneficios::getBeneficiosBySede(true) ?>
