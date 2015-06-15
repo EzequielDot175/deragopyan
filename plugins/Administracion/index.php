@@ -30,6 +30,8 @@ if(!class_exists("Administracion")):
             add_action("wp_ajax_nopriv_detailsbyid_dir" , array($this,"getDetailsByIdDirectorio"));
 			// add_filter('admin_menu',array($this,"be_menu_extras"), 10, 2);
 			add_filter('admin_init',array($this,"removeMenuByUser") );
+            add_action('admin_head',array($this, "changeOrderPostType"));
+
 
 		}
 
@@ -56,6 +58,23 @@ if(!class_exists("Administracion")):
 				
 			endif;
 		}
+		public function changeOrderPostType(){
+        ?>
+            <style>
+                #contextual-help-link-wrap, #screen-options-link-wrap, #pageslugdiv, #tagsdiv, #tagsdivsb, #tagsdiv-post_tag, #formatdiv, #categorydiv, #categorydivsb, #category-add-toggle, #passworddiv, .side-info, #notice, #post-body h2, #media-buttons, #wp-content-media-buttons, #wp-word-count, #slugdiv, #edit-slug-box, #misc-publishing-actions, #commentstatusdiv, #editor-toolbar #edButtonHTML, #quicktags, #content-html, #title, #titlediv, th.column-title, td.title, #editor, #editordiv, th.column-editor, td.editor, #author, #authordiv, th.column-author, td.author, #thumbnail, #thumbnaildiv, th.column-thumbnail, td.thumbnail, #postexcerpt, #postexcerptdiv, th.column-postexcerpt, td.postexcerpt, #revisions, #revisionsdiv, th.column-revisions, td.revisions, #pageparentdiv, #pageparentdivdiv, th.column-pageparentdiv, td.pageparentdiv, #post-formats, #post-formatsdiv, th.column-post-formats, td.post-formats, div.row-actions, div.row-actions .inline, fieldset.inline-edit-col-left, fieldset.inline-edit-col-left label, fieldset.inline-edit-col-left label.inline-edit-author, fieldset.inline-edit-col-left .inline-edit-group, fieldset.inline-edit-col-center, fieldset.inline-edit-col-center .inline-edit-categories-label, fieldset.inline-edit-col-center .category-checklist, fieldset.inline-edit-col-right, fieldset.inline-edit-col-right .inline-edit-tags, fieldset.inline-edit-col-right .inline-edit-group, tr.inline-edit-save p.inline-edit-save{
+                	display: block!important;
+                }
+            </style>
+            <script>
+                // jQuery(document).ready(function($) {
+                //     var clone = $('#postdivrich').clone(true, true);
+                //     $('#postdivrich').remove();
+                //     $('#postexcerpt').after(clone);
+                //     $('#postdivrich').css('display', 'block');
+                // });
+            </script>
+        <?php
+        }
 		public function addScriptTemplate(){
 				wp_register_script("templates-plugin", plugins_url("js/templates.js", __FILE__ ) );
 				wp_enqueue_script("templates-plugin");
@@ -146,7 +165,7 @@ if(!class_exists("Administracion")):
            				remove_menu_page("edit-comments.php" );
            				remove_menu_page("edit-comments.php" );
            				remove_menu_page("options-general.php" );
-           				remove_menu_page("sedes_degaropyan_manager" );
+           				//remove_menu_page("sedes_degaropyan_manager" );
            				remove_menu_page("tools.php" );
            				remove_menu_page("index.php" );
            				break;
@@ -199,10 +218,19 @@ if(!class_exists("Administracion")):
 			return $wpdb->get_results($sql,ARRAY_A);
 		}
 		public function removeRole(){
-			remove_role("author");
-			remove_role("contributor");
-			remove_role("subscriber");
-			remove_role("editor");
+			// remove_role("author");
+			// remove_role("contributor");
+			// remove_role("subscriber");
+			// remove_role("editor");
+
+			// global $current_user;
+			// $role = $current_user->roles[0];
+
+			// if($role == "deragopyan-master"):
+			// 	remove_role("administrator" );
+			
+			// endif;
+			
 		}
 		public function setRoles(){
 
@@ -214,6 +242,45 @@ if(!class_exists("Administracion")):
 			add_role( 'procedimientos-editor', "Procedimientos - Editor", array());
 			add_role( 'procedimientos-aprobador', "Procedimientos - Aprobador", array());
 			add_role( 'procedimientos-publicador', "Procedimientos - Publicador", array());
+
+			// add_role('administrator', "Administrador", array());
+
+			// $admin = get_role('administrator' );
+			// $admin->add_cap('activate_plugins');
+			// $admin->add_cap('delete_others_pages');
+			// $admin->add_cap('delete_others_posts');
+			// $admin->add_cap('delete_pages');
+			// $admin->add_cap('delete_posts');
+			// $admin->add_cap('delete_private_pages');
+			// $admin->add_cap('delete_private_posts');
+			// $admin->add_cap('delete_published_pages');
+			// $admin->add_cap('delete_published_posts');
+			// $admin->add_cap('edit_dashboard');
+			// $admin->add_cap('edit_others_pages');
+			// $admin->add_cap('edit_others_posts');
+			// $admin->add_cap('edit_pages');
+			// $admin->add_cap('edit_posts');
+			// $admin->add_cap('edit_private_pages');
+			// $admin->add_cap('edit_private_posts');
+			// $admin->add_cap('edit_published_pages');
+			// $admin->add_cap('edit_published_posts');
+			// $admin->add_cap('edit_theme_options');
+			// $admin->add_cap('export');
+			// $admin->add_cap('import');
+			// $admin->add_cap('list_users');
+			// $admin->add_cap('manage_categories');
+			// $admin->add_cap('manage_links');
+			// $admin->add_cap('manage_options');
+			// $admin->add_cap('moderate_comments');
+			// $admin->add_cap('promote_users');
+			// $admin->add_cap('publish_pages');
+			// $admin->add_cap('publish_posts');
+			// $admin->add_cap('read_private_pages');
+			// $admin->add_cap('read_private_posts');
+			// $admin->add_cap('read');
+			// $admin->add_cap('remove_users');
+			// $admin->add_cap('switch_themes');
+			// $admin->add_cap('upload_files');
 
 			//  noticias - editor
 			$editor_not = get_role('noticias-editor');
@@ -265,8 +332,14 @@ if(!class_exists("Administracion")):
 			$der_master->add_cap('manage_categories');
 			$der_master->add_cap('edit_published_posts');
 			$der_master->add_cap('manage_options');
+			$der_master->add_cap('edit_users');
+			$der_master->add_cap('create_users');
+			$der_master->add_cap('delete_users');
+			$der_master->add_cap('remove_users');
+			$der_master->add_cap('list_users');
+			$der_master->add_cap('promote_users');
+			// $der_master->add_cap('edit_users');
 
-			
 		}
 		
 

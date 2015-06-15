@@ -173,8 +173,19 @@
             alert("Nombre del organigrama vacio, por favor escriba uno.");
         }
       }
+
+      // jQuery(document).ready(function($) {
+      //   var Organigrama = $.fn.OrganiManager();
+      //       Organigrama.init("");
+          
+      // });
      
 </script>
 
+
+<script>
+    
+
+</script>
 
 <!-- /<select*(.*)select>/igm -->

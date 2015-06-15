@@ -20,6 +20,7 @@ if(!class_exists("Noticias")):
 			add_action('init', array($this, 'init'));
             add_action('init',array($this,"taxonomy"));
             add_action("init",array($this, "registerScripts") );
+            add_action('admin_head',array($this, "changeOrderPostType"));
 
 		}
 
@@ -67,7 +68,7 @@ if(!class_exists("Noticias")):
                 'capability_type'     => 'post',
                 'supports'            => array(
                     'title', 'editor', 'author', 'thumbnail',
-                    'excerpt','custom-fields', 'trackbacks', 'comments',
+                    'excerpt',
                     'revisions', 'page-attributes', 'post-formats'
                     )
             );
@@ -76,6 +77,26 @@ if(!class_exists("Noticias")):
             register_post_type( 'noticias', $args );
 
 		}
+        public function changeOrderPostType(){
+            if(get_post_type() == "noticias"):
+        ?>
+            <style>
+                #postdivrich{
+                    display: none;
+                    padding-bottom: 3em;
+                }
+            </style>
+            <script>
+                jQuery(document).ready(function($) {
+                    var clone = $('#postdivrich').clone(true, true);
+                    $('#postdivrich').remove();
+                    $('#postexcerpt').after(clone);
+                    $('#postdivrich').css('display', 'block');
+                });
+            </script>
+        <?php
+            endif;
+        }
         public function getCurrentUser(){
             global $current_user;
             echo "<pre>";

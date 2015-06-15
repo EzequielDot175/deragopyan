@@ -36,15 +36,16 @@
 	</div>
 	<div class="cell three">
 		<div class="right">
+			<div class="calendar">
+	 			<span><?php $tiempo->fecha(); ?></span>
+	 			<div class="calendar-img"></div>
+	 			<img src="<?php echo(IMG); ?>humedad-02.png" alt="" style="position:relative;top:-10px;">
+	 		</div>
 			<div class="temperature"><span>T<?php $tiempo->temperatura(); ?>°</span></div>
 	 		<div class="humedad">
 	 			<span>H<?php $tiempo->humedad(); ?>%</span>
-	 			<img src="<?php echo(IMG); ?>time.png" alt="" style="position:relative;top:-10px;">
 	 		</div>
-	 		<div class="calendar">
-	 			<span><?php $tiempo->fecha(); ?></span>
-	 			<div class="calendar-img"></div>
-	 		</div>
+	 		
 		</div>
 	</div>
 </div>

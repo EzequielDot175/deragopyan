@@ -53,12 +53,12 @@ jQuery(document).ready(function($) {
 			window.location.reload();
 		});
 	};
-	if (window.location.search.search(/procedimientos/ig) > -1) {
-		var html = $('#postdivrich').clone(true, true);
-		$('#postdivrich').remove();
-		$('#postbox-container-2').append(html);
+	// if (window.location.search.search(/procedimientos/ig) > -1) {
+	// 	var html = $('#postdivrich').clone(true, true);
+	// 	$('#postdivrich').remove();
+	// 	$('#postbox-container-2').append(html);
 
-	};
+	// };
 
 	// postdivrich
 	// console.log($('input[type="submit" name="submit" id="submit"]'));

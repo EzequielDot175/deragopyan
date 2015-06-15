@@ -71,13 +71,15 @@
 				return $row;
 			endif;
 		}
-		private static function dissappear($id){
+		public static function dissappear($id){
 			global $wpdb;
 			$wpdb->delete(self::$table, array("id" => (int)$id ) );
 		}
-		private static function edit($id,$value){
+		public static function edit($id,$value){
 			global $wpdb;
 			$wpdb->update(self::$table, array("value_option" => (string)$value ), array("id" => (int)$id ) );
+			// echo $id;
+			// echo $value;
 		}
 		public static function getAjaxName(){
 			return self::$ajax_name;
@@ -90,15 +92,33 @@
 
 	add_action( D_Gerencia::getAjaxAction() , D_Gerencia::getAjaxName() );
 	function gerencia(){
-		if($_POST["action"] == D_Gerencia::getAjaxName() ):
-			if (isset($_POST["edit"])) :
-				D_Gerencia::edit($_POST["id"],$_POST["edit"]);
-			elseif(isset($_POST["unset"])):
-				D_Gerencia::dissappear($_POST["id"]);
-			endif;
 
-		endif;
+
+		// echo "asdadas";
+		if($_POST["action"] == D_Gerencia::getAjaxName() ):
+			// print_r($_POST);
+
+			// // if (isset()) :
+			// // 	D_Gerencia::edit($_POST["id"],$_POST["edit"]);
+			// // elseif(isset($_POST["unset"])):
+			// // 	D_Gerencia::dissappear($_POST["id"]);
+			// // endif;
+			switch ($_POST["actionOption"]) {
+				case 'edit':
+					D_Gerencia::edit($_POST["id"],$_POST["value"]);
+					break;
+				case 'delete':
+					D_Gerencia::dissappear($_POST["id"]);
+					break;
+				
+				default:
+					break;
+			}
+			// D_Gerencia::edit($_POST["id"],$_POST["value"]);
+
+		// endif;
 		die();
+		endif;
 	}
 
 

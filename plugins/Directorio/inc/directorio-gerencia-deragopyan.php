@@ -25,7 +25,7 @@
 			<li>
 				<input type="text" disabled="" value="<?php echo($v->value_option) ?>" class="valueOption">
 				<input type="hidden" name="optionID" value="<?php echo($v->id) ?>">
-				<input type="hidden" name="postName" value="gerencias">
+				<input type="hidden" name="postName" value="gerencia">
 				<span style="display:none;">puesto</span>
 				<button class="save">Guardar</button>
 				<button class="edit">Editar</button>

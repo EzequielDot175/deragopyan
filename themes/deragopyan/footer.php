@@ -17,7 +17,7 @@
 				<div class="minilogo"></div>
 			</div>
 			<div class="col-6 x-logos">
-			<div class="icons"><p>VISITÁ NUESTRO SITIO WWW.DERAGOPYAN.COM.AR</p></div>
+			<div class="icons"><p>VISITÁ NUESTRO SITIO <a href="http://www.deragopyan.com.ar" target="_blank">WWW.DERAGOPYAN.COM.AR</a></p></div>
 			</div>
 			</div>
 		</div>

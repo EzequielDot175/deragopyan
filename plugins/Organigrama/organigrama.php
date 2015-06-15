@@ -59,10 +59,16 @@ if(!class_exists('OrgranigramaDeragopyan'))
 			wp_enqueue_style("OrganigramaDeragopyan");
 		}
 		public function addScriptOrgani(){
+			
 			wp_register_script("organigrama-script-1", plugins_url( "js/organigramaDeragopyan.js", __FILE__ ) );
+			wp_register_script("organigrama-script-2", plugins_url( "js/organigoogle.js", __FILE__ ) );
 			wp_register_script("organigrama-script-2", plugins_url( "js/organigoogle.js", __FILE__ ) );
 			wp_enqueue_script("organigrama-script-1");
 			wp_enqueue_script("organigrama-script-2");
+			if(is_admin()):
+				wp_register_script("organigrama-modal", plugins_url( "js/modalOrgani.js", __FILE__ ) );
+				wp_enqueue_script("organigrama-modal");
+			endif;
 		}
 		public function ajaxFilterPersonal(){
 			global $wpdb;

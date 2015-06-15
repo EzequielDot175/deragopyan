@@ -136,7 +136,7 @@ html {
 
 .subheader .cont-center .nav .menu li a {
 	color:#fff !important;
-	font-family:Brandom_grotesque_bold;
+	font-family:"Brandom_grotesque_bold";
 	display:block;
 	opacity:0.8;
 	font-size:10px;
@@ -226,7 +226,7 @@ html {
 }
 
 .subcontrols .cell {
-	height:38px;
+	height:100%;
 	float:left;
 	display:block;
 	margin-right:2.35765%;
@@ -258,15 +258,16 @@ html {
 }
 
 .subcontrols .cell.three .right {
-	height:38px;
+	height:30px;
 }
 
 .subcontrols .cell.three .right .temperature, .subcontrols .cell.three .right .humedad, .subcontrols .cell.three .right .calendar {
-	font-family:futuraBT-light;
+	font-family:"futuraBT-light";
 	display:inline-block;
 	vertical-align:middle;
 	color:white;
-	font-weight:bold;
+	font-size: 21px;
+	font-weight: normal;
 }
 
 .subcontrols .cell.three .right .temperature span, .subcontrols .cell.three .right .humedad span, .subcontrols .cell.three .right .calendar span {
@@ -292,9 +293,11 @@ html {
 .subcontrols .cell.three .right .calendar .calendar-img {
 	height:27px;
 	width:26px;
-	background:url(../img/calendar.png);
+	background:url(img/calendar.png);
 	display:inline-block;
 	background-position:-4px -3px;
+	position: relative;
+	top: -3px;
 }
 
 .sectionName h2 {
@@ -304,7 +307,7 @@ html {
 	font-weight:normal;
 	text-transform:uppercase;
 	font-size:32px;
-	padding:32px;
+	padding:8px;
 	margin-top:0;
 	margin-bottom:0;
 }

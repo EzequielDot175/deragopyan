@@ -174,7 +174,7 @@ get_header(); ?>
 
 			var mapOptions = {
 		          center: new google.maps.LatLng(map.lat, map.lgn),
-		          zoom: 14,
+		          zoom: 18,
 		          mapTypeId: google.maps.MapTypeId.ROADMAP
 		        };
 			var Mapa =  new google.maps.Map(document.getElementById("googleMaps"),mapOptions);

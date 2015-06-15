@@ -79,11 +79,15 @@ get_header();
 			 		<a href=""><li class="shutdown-bg"></li></a>
 			 	</ul>
 			 	<div class="tiempo">
-			 		<span class="tMax">T<?php $tiempo->temperatura(); ?>°</span>
+			 		
+
 			 		<span class="humedad">H<?php $tiempo->humedad(); ?>%</span>
+			 		<span class="tMax">T<?php $tiempo->temperatura(); ?>°</span>
 			 		<span class="wheater-bg"></span>
-			 		<span class="date-time"><?php $tiempo->fecha(); ?></span>
+
 			 		<span class="calendar-bg"></span>
+			 		<span class="date-time"><?php $tiempo->fecha(); ?></span>
+					
 				</div>
 			</div>
 	 </div>
@@ -94,31 +98,37 @@ get_header();
  		<div class="box-notices">
  			<div class="box-notice">
  				<span class="icon-calendar-box"></span>
- 				<div class="box-title-small">calendario</div>
  				<div class="box-notice-data">
- 					<p class="date-box">28 DE MARZO</p>
- 					<p class="short-description">Jornada de Actualización en Diagnóstico por Imágenes</p>
+ 					<div class="box-title-small">calendario</div>
+ 					<div class="content-notice">
+ 						<p class="date-box">28 DE MARZO</p>
+ 						<p class="short-description">Jornada de Actualización en Diagnóstico por Imágenes</p>
+ 					</div>
  				</div>
  			</div>
  			<div class="box-notice">
  				<span class="icon-calendar-box proced"></span>
- 				<div class="box-title-small">documentación</div>
  				<div class="box-notice-data">
- 					<p class="date-box">PROCEDIMIENTOS</p>
- 					<p class="short-description">Nombre de procedimiento ejemplo.</p>
- 					<p class="date-box">MANUALES</p>
- 					<p class="short-description">Nombre de procedimiento ejemplo.</p>
+ 					<div class="content-notice">
+ 						<div class="box-title-small">documentación</div>
+ 						<p class="date-box">PROCEDIMIENTOS</p>
+	 					<p class="short-description">Nombre de procedimiento ejemplo.</p>
+	 					<p class="date-box">MANUALES</p>
+	 					<p class="short-description">Nombre de procedimiento ejemplo.</p>
+ 					</div>
  				</div>
  			</div>
  			<div class="box-notice">
  				<span class="icon-calendar-box proced"></span>
- 				<div class="box-title-small">aviso importante</div>
  				<div class="box-notice-data">
- 					<p class="date-box"></p>
- 					<p class="short-description">Jornada de Actualización Diagnóstico
-						por Imágenes Jornada de Actualización 
-						en Diagnóstico por Imágenes Jornada 
-						de Actualiza en Diagnóstico por Imágenes</p>
+ 					<div class="content-notice">
+ 						<div class="box-title-small">aviso importante</div>
+ 						<p class="date-box"></p>
+	 					<p class="short-description">Jornada de Actualización Diagnóstico
+							por Imágenes Jornada de Actualización 
+							en Diagnóstico por Imágenes Jornada 
+							de Actualiza en Diagnóstico por Imágenes</p>
+ 					</div>
  				</div>
  			</div>
  		</div>
@@ -133,7 +143,7 @@ get_header();
 				<div class="minilogo"></div>
 			</div>
 			<div class="col-6 x-logos">
-			<div class="icons"><p>VISITÁ NUESTRO SITIO WWW.DERAGOPYAN.COM.AR</p></div>
+			<div class="icons"><p>VISITÁ NUESTRO SITIO <a href="http://www.deragopyan.com.ar" target="_blank">WWW.DERAGOPYAN.COM.AR</a></p></div>
 			</div>
 			</div>
 		</div>

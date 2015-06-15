@@ -17,6 +17,7 @@ jQuery(document).ready(function($) {
 								<button class="btn-beneficio">VER BENEFICIO</button>\
 							</div>\
 						</div>';
+		this.boxOrgani = '<div><img src="/wp-content/plugins/Organigrama/img/user.png" alt="" title=""/></div>';
 
 		this.onTemplate = function(expr,param){
 			var html = this[expr];
@@ -29,5 +30,13 @@ jQuery(document).ready(function($) {
 
 	}
 	window.parent.TemplateHTML = new TemplateHtml();
+
+
+
+
+
+	$('.button.category-add-submit').click(function(event) {
+		window.location.reload();
+	});
 
 });

@@ -17,33 +17,33 @@
 	}
 }
 @font-face {
-	font-family:futuraBT-light;
+	font-family:"futuraBT-light";
     src:url(fonts/futuraBT-light.otf);
 }
 @font-face {
-	font-family:Times_italic;
+	font-family:"Times_italic";
     src:url(fonts/times-italic.ttf);
     
 }
 @font-face {
-	font-family:Brandom_grotesque_bold;
+	font-family:"Brandom_grotesque_bold";
     src:url(fonts/Brandon_bld.otf);
 }
 @font-face {
-	font-family:Brandom_grotesque_medium;
+	font-family:"Brandom_grotesque_medium";
     src:url(fonts/Brandon_med.otf);
 }
 @font-face {
-	font-family:Brandom_grotesque_regular;
+	font-family:"Brandom_grotesque_regular";
     src:url(fonts/Brandon_reg.otf);
 }
 @font-face {
-	font-family:Brandom_grotesque_black;
+	font-family:"Brandom_grotesque_black";
     src:url(fonts/Brandon_blk.otf);
 }
 
 @font-face {
-	font-family:Brandom_grotesque_light;
+	font-family:"Brandom_grotesque_light";
     src:url(fonts/Brandon_light.otf);
 }
 
@@ -75,7 +75,7 @@
 			color: rgba(white, 0.7);
 			text-align: center;
 			line-height: 48px;
-			font-family: Brandom_grotesque_bold;
+			font-family:"Brandom_grotesque_bold";
 			font-size: 12px;
 
 		}
@@ -86,7 +86,7 @@
 			background: rgba(white, 0.2);
 			background-color: rgba(white, 0.2);
 			border: 0;
-			font-family: Times_italic;
+			font-family:"Times_italic";
 			font-size: 14px;
 			padding-left: 18px;
 			color: white;
@@ -130,7 +130,7 @@
 				height: 23px;
 				background: transparent;
 				border: 1px solid rgba(white, 0.7);
-				font-family: Brandom_grotesque_bold;
+				font-family:"Brandom_grotesque_bold";
 				font-size: 11px;
 				position: absolute;
 				top: 12px;
@@ -156,7 +156,7 @@
 				   	top: 16px;
 				   	left: 19px;
 				   	color: white;
-  					font-family: Brandom_grotesque_light;
+  					font-family:"Brandom_grotesque_light";
   					font-size: 27px;
   					height: 21px;
 				    text-align: center;
@@ -175,7 +175,7 @@
 				position: absolute;
 				top: 19px;
 				left: 41px;
-				font-family: Brandom_grotesque_bold;
+				font-family:"Brandom_grotesque_bold";
 				font-size: 11px;
 				color: rgba(white, 0.65);
 			}
@@ -257,8 +257,8 @@
 	width: 100%;
 	background: #ABA4A0;
 	background-color: #ABA4A0;
-	height: 77px;
-	font-family: Brandom_grotesque_bold;
+	height: 100px;
+	font-family:"Brandom_grotesque_bold";
 		.cont-center{
 			.logo-small{
 				height: 46px;
@@ -276,65 +276,86 @@
 				ul{
 					list-style-type: none;
 					float: left;
-					height: 54px;
 					padding: 0;
+					width: 590px;
 					margin: 0;
+					height: 45px;
 					li{
 						float: left;
 						text-align: center;
+						width: calc(100% / 6);
+						position: relative;
+						height: 100%;
+
 						a{
-							color: rgba(255,255,255,0.6)!important;
+							color: rgba(255,255,255,0.6);
 							text-decoration: none;
 							text-transform: uppercase;
 							font-size: 10px;
 							display: block;
+							height: 109%;
+
 							img{
 								display: block;
 								margin: 0 auto;
+								height: initial!important;
+							}
+							span{
+								position: absolute;
+								top: 100%;
+								width: 100%;
+								left: 0;
+							}
+						}
+						
+						&.menu-item-25,&.menu-item-22{
+							img{
+								position: relative;
+								left: 6px;
 							}
 						}
 					}
-					.menu-item-66{
-						margin-right: 21px;
-						a img{
-							height: 33px!important;
-							margin-bottom: 10px;
-						}
-					}
-					.menu-item-21{
-						margin-right: 19px;
-						a img{
-							height: 31px!important;
-							margin-bottom: 12px;
-						}
-					}
-					.menu-item-22{
-						margin-right: 41px;
-						a img{
-							height: 32px!important;
-							margin-bottom: 10.5px;
-						}
-					}
-					.menu-item-20{
-						margin-right: 35px;
-						a img{
-							height: 31px!important;
-							margin-bottom: 11.5px;
-						}
-					}
-					.menu-item-205{
-						margin-right: 44px;
-						a img{
-							height: 34px!important;
-							margin-bottom: 8.5px;
-						}
-					}
-					.menu-item-25{
-						a img{
-							height: 34px!important;
-							margin-bottom: 8.5px;
-						}
-					}
+					// .menu-item-66{
+					// 	margin-right: 21px;
+					// 	a img{
+					// 		height: 33px!important;
+					// 		margin-bottom: 10px;
+					// 	}
+					// }
+					// .menu-item-21{
+					// 	margin-right: 19px;
+					// 	a img{
+					// 		height: 31px!important;
+					// 		margin-bottom: 12px;
+					// 	}
+					// }
+					// .menu-item-22{
+					// 	margin-right: 41px;
+					// 	a img{
+					// 		height: 32px!important;
+					// 		margin-bottom: 10.5px;
+					// 	}
+					// }
+					// .menu-item-20{
+					// 	margin-right: 35px;
+					// 	a img{
+					// 		height: 31px!important;
+					// 		margin-bottom: 11.5px;
+					// 	}
+					// }
+					// .menu-item-205{
+					// 	margin-right: 44px;
+					// 	a img{
+					// 		height: 34px!important;
+					// 		margin-bottom: 8.5px;
+					// 	}
+					// }
+					// .menu-item-25{
+					// 	a img{
+					// 		height: 34px!important;
+					// 		margin-bottom: 8.5px;
+					// 	}
+					// }
 				}
 			}
 		}
@@ -350,7 +371,7 @@
 }
 .sectionName{
 	h2{
-		font-family: Brandom_grotesque_light;
+		font-family:"Brandom_grotesque_light";
 		font-size: 32px;
 	}		
 }

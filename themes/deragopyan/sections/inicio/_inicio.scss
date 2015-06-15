@@ -16,11 +16,15 @@ header{
 	height: 280px;
 	background: #BBAEB4;
   	border-top: 3px solid #B0005C;
+	margin-bottom: 0;
+
 
 	.title-display {
 		width: 500px;
 	}
-	.cont-center{position: relative};
+	.cont-center{
+		position: relative;
+	};
 	.degrade-left{
 		position: absolute;
 		top: 0;
@@ -217,13 +221,20 @@ nav{
 	background: rgba(#B28AAA, 0.3);
 	background-color: rgba(#B28AAA, 0.3);
 
+	.cont-center,.center-submenu{
+		height: 100%;
+	}
+	.center-submenu{
+		padding-top: 14px;
+	}
+
 	
 	.wheater-bg{
-		background: url(img/humedad.png) 2px -2px;
-  		background-repeat: no-repeat;
-  		height: 23px;
-  		width: 29px;
-  		display: inline-block;
+		background: url(img/humedad-02.png) -7px -2px;
+		background-repeat: no-repeat;
+		height: 27px;
+		width: 33px;
+		display: inline-block;
 	}
 	.calendar-bg{
 		background: url(img/calendar.png) -3px -2px;
@@ -238,8 +249,6 @@ nav{
 		padding: 0;
 		margin: 0;
 		float: left;
-		position: relative;
-  		top: 18px;
 
 		li{
 			height: 28px;
@@ -287,34 +296,35 @@ nav{
 
 	.tiempo{
 		float: right;
-		width: 262px;
-		position: relative;
-  		top: 9px;
+		height: 28px;
   		font-family: Brandom_grotesque_regular;
 		font-size: 21px;
 		color: white;
 		
 		.calendar-bg{
-			position: absolute;
-			right: 0;
-  			top: -1px;	
+  			margin-left: 9px;
+  			float: right;
+  			position: relative;
+ 			top: -1px;
 		}
 		.date-time{
-			position: absolute;
-  			right: 39px;
+  			float: right;
+  			margin-left: 15px;
 		}
 		.wheater-bg{
-			position: absolute;
-  			right: 109px;
-  			top: 2px;
+  			float: right;
+  			margin-left: 13px;
+  			position: relative;
+  			top: -3px;
 		}
 		.humedad{
-			position: absolute;
-			right: 158px;
+			float: right;
+			margin-left: 7px;
 		}
 		.tMax{
-			position: absolute;
-			right: 218px;
+			float: right;
+			margin-left: 10px;
+
 		}
 	}
 }
@@ -327,16 +337,17 @@ nav{
 		width: 1051px;
 		margin: 0 auto;
 		.icon-calendar-box{
-			background: url(img/30calendar.png) -6px -4px;
+			background: url(img/menu-icons-02.png) -5px -5px;
 			position: absolute;
-			height: 44px;
-			width: 42px;
+			height: 41px;
+			width: 38px;
 			background-repeat: no-repeat;
 			top: 19px;
 			left: 23px;
 			&.proced{
-				background: url(img/icon-3.png) 3px 2px;
-  				background-repeat: no-repeat;
+				  background: url(img/icon-3.png) 0px -1px;
+				  background-repeat: no-repeat;
+				  width: 38px;
 			}
 		}
 		.box-notice{
@@ -362,6 +373,7 @@ nav{
 				font-size: 14px;
 				color: rgba(white, 0.7);
 				margin: 0;
+				font-style: italic;
 			}
 		}
 		.box-notice-data{
@@ -372,15 +384,19 @@ nav{
 			left: 68px;
 			padding-top: 10px;
 
+			.content-notice{
+				padding-right: 30px;
+				width: 100%;
+				height: 100%;
+				position: relative;
+			}
+
 		}
 		.box-title-small{
 			font-family: Brandom_grotesque_bold;
 			color: rgba(white, 0.7);
 			text-transform: uppercase;
 			font-size: 11px;
-			position: absolute;
-			top: 19px;
-			left: 71px;
 		}
 	}
 }

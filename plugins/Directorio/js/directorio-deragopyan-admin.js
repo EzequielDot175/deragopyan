@@ -30,12 +30,12 @@ jQuery(document).ready(function($) {
 		event.preventDefault();
 		var valueID = $(this).parent().children('input[name="optionID"]').val();
 		var spanText = $(this).parent().children('span').text();
-		var check = confirm("¿Esta seguro que desea eliminar este "+spanText);
+		var check = confirm("¿Esta seguro que desea eliminar este "+spanText+"?");
 		var postName = $(this).parent().children('input[name="postName"]').val();
 		if (check) {
 			$(this).parent().remove();
 			params = {id : valueID, action: postName, actionOption: "delete"};
-			$.post(ajaxurl,params);
+			$.post(ajaxurl,params,function(data){console.log(data)});
 		};
 	});	
 
