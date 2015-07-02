@@ -9,8 +9,8 @@
 		private $connect;
 		private $woeid;
 		private $typeTemperature;
-
 		private $datos;
+		private $meses = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
 
 		function __construct()
 		{
@@ -49,11 +49,17 @@
 			print($this->datos["humedad"]);
 		}
 		public function Fecha(){
-			print($this->datos["fecha"]);
+			$month = (int)date("m");
+			$day = (int)date("d");
+			echo $day." de ".$this->meses[$month];
 		}
 		public function Unidad(){
 			print($this->datos["unidadTemp"]);
 		}
+		// public function getMes( $timestamp = 0 ){
+		// 	// $timestamp = $timestamp == 0 ? time() : $timestamp;
+		// 	// return $meses[date("n", $timestamp)];
+		// }
 	}
 
 

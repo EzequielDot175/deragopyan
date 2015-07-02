@@ -29,7 +29,23 @@ jQuery(document).ready(function($) {
 		}
 
 	}
+	function uploadAjax(formdata){
+			var response;
+			$.ajax({
+				url: '/wp-admin/admin-ajax.php',
+				type: 'POST',
+				contentType: false,
+			   	processData: false,
+				data: formdata,
+				success: function(data){
+					response = data;
+				}
+			});
+			return response;
+		
+	}
 	window.parent.TemplateHTML = new TemplateHtml();
+	window.parent.uploadAjax = uploadAjax();
 
 
 

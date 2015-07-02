@@ -15,7 +15,7 @@ $upload_dir = wp_upload_dir();
 define(DIRECTORIO_PLUGIN_DIR, plugin_dir_path(__FILE__));
 define(DIRECTORIO_UPLOADS_IMAGES,$upload_dir["basedir"]."/directorio/");
 define(DIRECTORIO_LINK_IMAGES,$upload_dir["baseurl"]."/directorio/");
-
+define(PHPEXCEL_ROOT, plugin_dir_path(__FILE__)."class/");
 add_action('admin_menu','setDirectorioDeragopyan');
 
 
@@ -104,7 +104,8 @@ function addStylesDirectorio(){
 add_action( 'wp_print_scripts', 'addStylesDirectorio' );
 add_action( 'wp_print_scripts', 'addScriptsDirectorio' );
 
-
+require_once DIRECTORIO_PLUGIN_DIR."class/class.search.deragopyan.php";
+require_once DIRECTORIO_PLUGIN_DIR."class/class.excel.php";
 // Carga de empleados
 requireMyPlugin("directorio-manager-deragopyan.php");
 requireMyPlugin("directorio-create-deragopyan.php");
@@ -115,7 +116,8 @@ requireMyPlugin("directorio-borrar-deragopyan.php");
 requireMyPlugin("directorio-editar-deragopyan.php");
 requireMyPlugin("directorio-deragopyan-front-end.php");
 requireMyPlugin("directorio-export-to-mailpoet.php");
-require_once DIRECTORIO_PLUGIN_DIR."class/class.search.deragopyan.php";
+requireMyPlugin("directorio-export-to-mailpoet.php");
+
 
 add_action("wp_ajax_details_by_id_directorio", array("details_by_id_directorio") );
 add_action("wp_ajax_nopriv_details_by_id_directorio", array("details_by_id_directorio") );
