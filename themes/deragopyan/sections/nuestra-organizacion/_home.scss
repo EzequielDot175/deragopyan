@@ -1,9 +1,16 @@
 .nuestra-organizacion{
 
+	.full {
+		width: 900px !important;
+	}
+
 	.cont-center {
 		.column2{
+			width: 700px;
+			//width: 900px;
 			.data-container{
-				width: 700px;
+				width: 100%;
+				//width: 900px;
 			}
 		}
 		.column1{

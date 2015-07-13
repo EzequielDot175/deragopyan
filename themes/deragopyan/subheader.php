@@ -37,8 +37,8 @@
 	<div class="cell three">
 		<div class="right">
 			<div class="calendar">
-	 			<span><?php $tiempo->fecha(); ?></span>
 	 			<div class="calendar-img"></div>
+	 			<span><?php $tiempo->fecha(); ?></span>
 	 			<img src="<?php echo(IMG); ?>humedad-02.png" alt="" style="position:relative;top:-10px;">
 	 		</div>
 			<div class="temperature"><span>T<?php $tiempo->temperatura(); ?>°</span></div>

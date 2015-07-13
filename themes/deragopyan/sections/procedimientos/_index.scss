@@ -1,7 +1,15 @@
+.page-template-procedimientos{
+	.footer-home {
+		display: none;
+	}
+}
+
 .procedimientos-content{
 	background: rgba(#B28AAA, 0.5);
 	background-color: rgba(#B28AAA, 0.5);
 	height: 700px;
+
+	
 	.center-procedimientos{
 		min-height: 600px;
 		width: 1101px;
@@ -18,11 +26,12 @@
 			width: 197px;
 		}
 		.column3{
-			width: 702px;
+			//width: 702px;
+			width: 900px;
 			background: rgba(white, 0.55);
 			background-color: rgba(white, 0.55);
 			h3{
-				width: 661px;
+				width: 855px;
 				float: left;
 				margin-left: 20px;
 				margin-top: 23px;
@@ -31,7 +40,8 @@
 				font-family: Brandom_grotesque_bold;
 			}
 			.data-categories{
-				width: 661px;
+				//width: 661px;
+				width: 855px;
 				margin-left: 20px;				
 				margin-top: 30px;
 				.item-box-category{

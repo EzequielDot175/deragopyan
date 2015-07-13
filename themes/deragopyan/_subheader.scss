@@ -279,7 +279,7 @@ html {
 }
 
 .subcontrols .cell.three .right .humedad {
-	margin-right:21px;
+	//margin-right:21px;
 }
 
 .subcontrols .cell.three .right .humedad span {
@@ -293,11 +293,14 @@ html {
 .subcontrols .cell.three .right .calendar .calendar-img {
 	height:27px;
 	width:26px;
-	background:url(img/calendario.svg);
+	//background:url(img/calendario.svg);
+	background:url(img/calendario.png);
 	display:inline-block;
-	background-position:-4px -3px;
+	//background-position:-4px -3px;
 	position: relative;
 	top: -3px;
+	background-size: 27px;
+	color: #fff;
 }
 
 .sectionName h2 {

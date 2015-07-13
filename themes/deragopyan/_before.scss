@@ -19,6 +19,10 @@ Text Domain: deragopyan
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -411,6 +415,20 @@ footer {
   color: #FFF;
 }
 
+.icons-facebook{
+  height: 39px;
+  background-repeat: no-repeat;
+  background-position: top 0px left 80px;
+  margin-top: -15px;
+}
+
+
+.icons-facebook p{
+  font-size: 10px;
+  padding-left: 200px;
+  padding-top: 15px;
+  color: #FFF;
+}
 /*
 nav 
 */

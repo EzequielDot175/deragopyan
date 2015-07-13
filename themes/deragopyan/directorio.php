@@ -1,5 +1,4 @@
 <?php 
-
 /**
 *
 * Template Name: Página Directorio
@@ -7,7 +6,6 @@
  *
  * @package Deragopyan
  */
-
 
 
  ?>
