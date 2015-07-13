@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php include 'tiempo.php'; $tiempo = new Wheater(); ?>
+<script src="<?php bloginfo('template_directory') ?>/js/fn.js"></script>
 
 <?php $imgUri = get_site_url()."/wp-content/themes/deragopyan/img/"; ?>
 <div class="subheader">

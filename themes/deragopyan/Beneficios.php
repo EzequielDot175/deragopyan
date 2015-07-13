@@ -87,6 +87,7 @@ get_header(); ?>
 						<p>Deseo recibir información sobre este Beneficio</p>
 						<input type="text" placeholder="Ingrese su email ..">
 						<button>OK</button>
+						<a id="download">Descargar beneficio</a>
 					</div>
 				</div>
 			</div>
@@ -236,6 +237,14 @@ get_header(); ?>
 				$('.navigator').css('display', 'block');
 			});
 		});
+
+		$('#download').click(function(event) {
+			event.preventDefault();
+			$.fn.plug("pdf",{get:"example"},function(a){
+				console.log(a);
+			});
+
+		});
 	
 
 	});
@@ -248,4 +257,3 @@ get_header(); ?>
 
 
 
-<?php Beneficios::getBeneficiosBySede(true) ?>

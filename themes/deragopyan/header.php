@@ -15,8 +15,8 @@ $path =  $_SERVER["REQUEST_URI"];
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-
+<script src="<?php bloginfo('template_directory') ?>/js/jquery.js"></script>
+<script src="<?php bloginfo('template_directory') ?>/js/fn.js"></script>
 <?php wp_head(); ?>
 </head>
 
