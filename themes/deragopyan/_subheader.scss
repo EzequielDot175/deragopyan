@@ -23,7 +23,7 @@ html {
 }
 
 .subheader {
-	height:153px;
+	height:120px;
 	background-color:rgba(255, 255, 255, 0.15);
 	background:rgba(255, 255, 255, 0.15);
 }
@@ -33,6 +33,7 @@ html {
 	max-width:1100px;
 	margin-left:auto;
 	margin-right:auto;
+	padding-top: 20px;	
 }
 
 .subheader .cont-center::after {
@@ -64,9 +65,9 @@ html {
 	margin-right:2.35765%;
 	width:14.70196%;
 	margin:0;
-	width:232px;
-	margin-left:32px;
+	width:264px;
 	margin-right:57px;
+	margin-top: 20px;
 }
 
 .subheader .cont-center .logo:last-child {
@@ -76,7 +77,7 @@ html {
 .subheader .cont-center .logo img {
 	display:block;
 	width:227px;
-	margin:0 auto;
+	margin:0;
 	position:relative;
 	top:-9px;
 }

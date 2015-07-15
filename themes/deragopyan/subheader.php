@@ -5,9 +5,6 @@
 <?php $imgUri = get_site_url()."/wp-content/themes/deragopyan/img/"; ?>
 <div class="subheader">
 	<div class="cont-center">
-		<div class="search">
-			<?php get_search_form(); ?>
-		</div>
 		<div class="logo">
 			<a href="<?php echo get_site_url(); ?>"><img src="<?php echo(IMG) ?>deragopyan.png" alt="logo"></a>
 		</div>

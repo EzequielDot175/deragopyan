@@ -10,7 +10,7 @@ header{
 	}
 }
 .search-form{
-	width: 1110px;
+	//width: 1110px;
 }
 .banner{
 	height: 280px;
@@ -447,19 +447,17 @@ footer{
 
 
 input.search-field{
-	width:221px;
-	font-family: Times_italic;
-	font-style: italic;
+	width:200px;
 	font-size: 13px;
 
 	&::-webkit-input-placeholder {
-	  color: white;
-	font-size: 13px;
+	    color: white;
+		font-size: 13px;
 	  
 	}
 	&:-moz-placeholder {
 	  color: white;
-	font-size: 13px;
+	  font-size: 13px;
 	  
 	}
 	&::-moz-placeholder {

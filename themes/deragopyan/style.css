@@ -107,7 +107,7 @@ a.logo-mininav {
   display: block; }
 
 input.search-field {
-  width: 200px;
+  width: 190px;
   height: 37px;
   color: #FFF;
   background-image: url(img/search.png);
@@ -542,21 +542,37 @@ footer p a {
 .mr {
   margin-right: 4px; }
 
+.busqueda-avanzada {
+  width: 1094px;
+  margin: 0 auto;
+  position: relative; }
+  .busqueda-avanzada .boton-sidebar {
+    margin-top: -48px;
+    height: 40px;
+    width: 240px;
+    position: absolute;
+    right: 0; }
+    .busqueda-avanzada .boton-sidebar img {
+      width: 30px;
+      cursor: pointer;
+      margin-top: 10px;
+      display: block;
+      float: left; }
+    .busqueda-avanzada .boton-sidebar .oculta {
+      display: none; }
+    .busqueda-avanzada .boton-sidebar input.search-field {
+      width: 197px; }
+
 .sidebar {
   position: absolute;
-  z-index: 5; }
-  .sidebar .boton-sidebar {
-    margin-top: -38px;
-    height: 40px; }
-    .sidebar .boton-sidebar img {
-      width: 30px;
-      cursor: pointer; }
-    .sidebar .boton-sidebar .oculta {
-      display: none; }
+  z-index: 5;
+  top: 48px;
+  right: -3px; }
   .sidebar .column1 {
     background: #b28aaa;
     background-color: #b28aaa;
-    display: none; }
+    display: none;
+    width: 197px; }
     .sidebar .column1.panel-buttons {
       text-transform: uppercase;
       font-size: 12px;
@@ -567,7 +583,7 @@ footer p a {
       font-size: 12px; }
     .sidebar .column1 .search-input {
       margin-top: 1px;
-      width: 197px;
+      width: 100%;
       height: 47.5px;
       background: rgba(255, 255, 255, 0.2);
       background-color: rgba(255, 255, 255, 0.2);
@@ -591,7 +607,7 @@ footer p a {
       background-color: rgba(255, 255, 255, 0.3);
       border: none;
       margin-top: 1px;
-      width: 197px;
+      width: 100%;
       height: 47.5px;
       cursor: pointer;
       -webkit-transition: all 0.4s;
@@ -667,7 +683,7 @@ footer p a {
         color: white;
         padding-left: 10px; }
     .sidebar .column1 .submit-search-form {
-      width: 197px;
+      width: 100%;
       height: 39px;
       border: none;
       margin-top: 1px; }
@@ -839,8 +855,8 @@ footer p a {
   top: 0;
   left: 0;
   width: 100%;
-  background: #ABA4A0;
-  background-color: #ABA4A0;
+  background: #b7abb4;
+  background-color: #b7abb4;
   height: 100px;
   font-family: "Brandom_grotesque_bold"; }
   .subMenuFixed .cont-center .logo-small {
@@ -920,7 +936,7 @@ html {
   display: table; }
 
 .subheader {
-  height: 153px;
+  height: 120px;
   background-color: rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.15); }
 
@@ -928,7 +944,8 @@ html {
   height: 100%;
   max-width: 1100px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-top: 20px; }
 
 .subheader .cont-center::after {
   clear: both;
@@ -955,9 +972,9 @@ html {
   margin-right: 2.35765%;
   width: 14.70196%;
   margin: 0;
-  width: 232px;
-  margin-left: 32px;
-  margin-right: 57px; }
+  width: 264px;
+  margin-right: 57px;
+  margin-top: 20px; }
 
 .subheader .cont-center .logo:last-child {
   margin-right: 0; }
@@ -965,7 +982,7 @@ html {
 .subheader .cont-center .logo img {
   display: block;
   width: 227px;
-  margin: 0 auto;
+  margin: 0;
   position: relative;
   top: -9px; }
 
@@ -2468,9 +2485,6 @@ header {
     width: 279px;
     background: url(img/header-02.png); }
 
-.search-form {
-  width: 1110px; }
-
 .banner {
   height: 280px;
   background: #BBAEB4;
@@ -2809,9 +2823,7 @@ footer .row {
   padding: 0; }
 
 input.search-field {
-  width: 221px;
-  font-family: Times_italic;
-  font-style: italic;
+  width: 200px;
   font-size: 13px; }
   input.search-field::-webkit-input-placeholder {
     color: white;
