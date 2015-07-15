@@ -52,7 +52,7 @@ get_header(); ?>
 <div class="procedimientos-content deragopyan-container">
 	<div class="center-procedimientos">
 		
-		<div class="column2">
+		<div class="column2 sidebarLeftFixed">
 			<div class="fullwidth box-primary btn-procedimientos"><span class="text-proc">GERENCIA</span> <span class="triangle-up"></span></div>
 			<ul class="list-categories">
 				<?php foreach(Procedimientos::getMenuLeft() as $k => $v): ?>
@@ -63,7 +63,7 @@ get_header(); ?>
 			<div class="fullwidth box-primary btn-procedimientos operaciones-btn"><span class="text-proc">PROCEDIMIENTOS</span> <span class="triangle-down"></span></div>
 
 		</div>
-		<div class="column3">
+		<div class="column3 contenedorLeftFixed">
 			<h3>ÁREAS</h3>
 			<div class="data-categories">
 				<!-- <div class="item-box-category">

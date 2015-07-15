@@ -65,11 +65,105 @@
 	         event.preventDefault();
 	         var navPosition = $('.subMenuFixed').offset().top;
 	         if (navPosition > 150) {
-	         	$('.subMenuFixed').animate({opacity: 1,zIndex: 100},100);
+	         	$('.subMenuFixed').animate({opacity: 1,zIndex: 100},0);
+	         	//$('.subMenuFixed').fadeIn('fast');
 	         }else{
-	         	$('.subMenuFixed').animate({opacity: 0,zIndex: -1},100);
-
+	         	$('.subMenuFixed').animate({opacity: 0,zIndex: -1},0);
+	         	//$('.subMenuFixed').fadeOut('fast');
 	         }
 	     });     
 	});
 </script>
+
+<!--sidebar fixed -->
+<script>
+	jQuery(document).ready(function($) {
+	     $(window).on('scroll', function(event) {
+
+	        sidebarfixed ();
+			titulofixed ();
+
+	        $(window).resize(function() {
+				sidebarfixed ();
+			});
+			
+	     });     
+	});
+
+
+	function sidebarfixed (){
+
+		event.preventDefault();
+		var navPosition = $('.subMenuFixed').offset().top;
+		var windowWidth = $(window).width();
+		posicion = (windowWidth - 900 - 203 )/2;
+
+		//sidebar standard
+		if (navPosition > 150) {
+	     	$('.sidebarRightFixed').css({
+				"position":"fixed",
+				'top' : '161px',
+				'right' : posicion +'px'
+			});
+			$('.sidebarLeftFixed').css({
+				"position":"fixed",
+				'top' : '161px',
+			});
+			$('.contenedorLeftFixed').css({
+				"margin-left":"200px"
+			});
+	    }else{
+	     	$('.sidebarRightFixed').css({
+				"position":"relative",
+				'top' : '0',
+				'right' : '0'
+			});
+			$('.sidebarLeftFixed').css({
+				"position":"relative",
+				'top' : '0',
+			});
+			$('.contenedorLeftFixed').css({
+				"margin-left":"0px"
+			});
+		}
+
+		//sidebar en pagina con slider
+		if (navPosition > 450) {
+	     	$('.sidebarRight2Fixed').css({
+				"position":"fixed",
+				'top' : '161px',
+				'right' : posicion +'px'
+			});
+	    }else{
+	     	$('.sidebarRight2Fixed').css({
+				"position":"relative",
+				'top' : '0',
+				'right' : '0'
+			});
+		}
+	}
+
+	// titulo fixed
+	function titulofixed (){
+
+		event.preventDefault();
+		var navPosition = $('.subMenuFixed').offset().top;
+		var windowWidth = $(window).width();
+
+		//sidebar en pagina con slider
+		if (navPosition > 150) {
+	     	$('.sectionName').css({
+				"position":"fixed",
+				'top' : '99px',
+				'width' : '100%',
+				'z-index' : '10',
+			});
+	    }else{
+	     	$('.sectionName').css({
+				"position":"relative",
+				'top' : '0',
+			});
+		}
+	}
+</script>
+<!--sidebar titulo -->

@@ -405,6 +405,10 @@ nav{
 .footer-home{
 	background: rgba(#B28AAA, 0.3);
 	background-color: rgba(#B28AAA, 0.3);
+	//position: fixed;
+	//bottom: 0;
+	//width: 100%;
+	//background: url(img/bg-header_02.png) no-repeat center center fixed;
 }
 
 .center-submenu{
@@ -416,12 +420,15 @@ nav{
 footer{
 	.inner{
 		max-width: 1051px;
+
 		.x-logos{
 			float: right;
 		}
+
 		.col-6{
-			
+			margin-top: 12px;
 			width: 366px;
+
 			.icons{
 				background-position: top 0px left 0px;
 			}
@@ -434,8 +441,7 @@ footer{
 		}
 	}
 	.row{
-		padding-left: 0;
-		padding-right: 0;
+		padding:0;
 	}
 }
 

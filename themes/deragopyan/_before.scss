@@ -35,7 +35,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  margin: 0 0 100px !important; 
+  margin: 0;
 }
 
 .bg-main-header{
@@ -393,13 +393,14 @@ footer {
     position: relative;
     left: 0;
     bottom: 0;
-    height: 100px;
+    height: 80px;
     width: 100%;
     background-color: transparent;
 }
 .minilogo{
   width: 134px;
   height: 33px;
+  margin-top: 12px;
   background-image: url(img/logo-deragopyan-foot.png);
 }
 .icons{

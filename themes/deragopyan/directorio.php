@@ -17,6 +17,7 @@
 
 <div class="directorio">
 	<?php 
+	//wp-content\plugins\Directorio\inc\directorio-deragopyan-front-end.php
 	if (function_exists("frontEntDeragopyanDirectorio")) :
 		frontEntDeragopyanDirectorio();
 	endif; 

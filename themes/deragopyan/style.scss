@@ -71,6 +71,7 @@
 
 		img{
 			width: 30px;
+			cursor: pointer;
 		}
 		.oculta{
 			display: none;
@@ -237,6 +238,7 @@
 	}
 }
 .deragopyan-container{
+	min-height: 60vh;
  	
 	.column1{
 		float: left;
@@ -244,7 +246,7 @@
 		margin-top: 5px;
 		margin-right: 5px;
 		vertical-align: top;
-		height: 673.74px;
+
 		&.panel-buttons{
 			text-transform: uppercase;
 			font-size: 12px;
@@ -447,18 +449,23 @@
 				background-color: none;
 				margin-right: 136.666px;
 				float: left;
+				margin-top: 13px;
 
 			}
 			.menufixed{
-				width: 583.333px;
-				float: left;
+				width: 750px;
+				float: right;
+				margin-right: -25px;
+				margin-top: 8px;
+
 				ul{
 					list-style-type: none;
 					float: left;
 					padding: 0;
-					width: 590px;
+					width: 750px;
 					margin: 0;
 					height: 45px;
+
 					li{
 						float: left;
 						text-align: center;

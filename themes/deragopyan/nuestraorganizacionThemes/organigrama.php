@@ -16,7 +16,7 @@
 
 
 
-<div class="sectionName">
+<div class="sectionName ">
   <h2><div class="cont-center">NUESTRA ORGANIZACIÓN</div></h2>
   <!--sidebar-->
   <div class="cont-center">
@@ -67,7 +67,7 @@
     
       
     </div>
-    <div class="column1 panel-buttons">
+    <div class="column1 panel-buttons sidebarRightFixed">
       <div class="filter-btn">
         <a href="/nuestra-organizacion/">MISIÓN, VISIÓN Y VALORES</a>
       </div>

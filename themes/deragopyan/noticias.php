@@ -233,7 +233,7 @@ get_header(); ?>
 				<!-- Box content 3 -->
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRight2Fixed">
 			<div class="filter-btn">
 				CATEGORÍA 1
 			</div>

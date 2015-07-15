@@ -11,7 +11,7 @@
 	
  ?>
 <?php require get_template_directory()."/subheader.php"; ?>
-<div class="sectionName">
+<div class="sectionName ">
 	<h2><div class="cont-center">Nuestra organización</div></h2>
 	<!--sidebar-->
 	<div class="cont-center">
@@ -93,7 +93,7 @@
 					</div>
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn">
 				<a href="/nuestra-organizacion/">MISIÓN, VISIÓN Y VALORES</a>
 			</div>

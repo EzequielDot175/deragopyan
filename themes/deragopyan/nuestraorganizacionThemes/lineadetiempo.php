@@ -15,7 +15,7 @@
 	$years = array_keys($data);
  ?>
 
-<div class="sectionName">
+<div class="sectionName ">
 	<h2><div class="cont-center">NUESTRA ORGANIZACIÓN</div></h2>
 	<!--sidebar-->
 	<div class="cont-center">
@@ -57,7 +57,7 @@
 </div>
 <div class="background-sections deragopyan-container beneficios nuestra-organizacion">
 	<div class="cont-center ">
-		<div class="column1 mr" >
+		<div class="column1 mr sidebarLeftFixed" >
 			<div class="years-of-line">
 				<?php foreach($years as $k => $v): ?>
 					<div class="year">
@@ -66,7 +66,7 @@
 				<?php endforeach; ?>
 			</div>
 		</div>
-		<div class="column2 mr">
+		<div class="lineaTiempo column2 mr contenedorLeftFixed">
 			<div class="content-title-triangle">
 				<div class="box-title"><?php echo $wp_query->post->post_title; ?></div>
 			</div>
@@ -100,7 +100,7 @@
 
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn">
 				<a href="/nuestra-organizacion/">MISIÓN, VISIÓN Y VALORES</a>
 			</div>

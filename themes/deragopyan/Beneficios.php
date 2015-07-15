@@ -103,7 +103,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn" style="margin-top:0;">
 				<a id="back">TODOS LOS BENEFICIOS 
 
