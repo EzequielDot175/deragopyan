@@ -29,7 +29,6 @@ get_header();
    	<div class="bg-main-header">
 	    <div class="container">
 		<div class="row">
-	    <?php get_search_form(); ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo"></a>
 		</div><!-- /row -->
 		</div><!-- /container -->	
@@ -50,7 +49,7 @@ get_header();
  
 
  <nav>
- 	<div class="cont-center">
+ 	<div class="cont-center MenuHome">
  		<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
  	</div>
  	<!-- <ul>

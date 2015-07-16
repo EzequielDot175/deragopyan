@@ -561,7 +561,9 @@ footer p a {
     .busqueda-avanzada .boton-sidebar .oculta {
       display: none; }
     .busqueda-avanzada .boton-sidebar input.search-field {
-      width: 197px; }
+      width: 197px;
+      background-color: rgba(255, 255, 255, 0.15);
+      background-image: none; }
 
 .sidebar {
   position: absolute;
@@ -847,19 +849,37 @@ footer p a {
     vertical-align: top;
     height: 673.74px; }
 
-.subMenuFixed {
+.menu-Fixed {
   position: fixed;
-  opacity: 0;
+  background: rgba(183, 171, 180, 0.9) !important;
+  background-color: rgba(183, 171, 180, 0.9) !important;
+  z-index: 10 !important;
+  opacity: 1;
+  padding: 12px 0px 0px 0px !important; }
+  .menu-Fixed #menu-menu-home {
+    position: absolute;
+    height: 65px;
+    top: -15px; }
+  .menu-Fixed .cont-center .menufixed {
+    position: relative; }
+  .menu-Fixed .cont-center {
+    position: relative !important; }
+
+#menu {
+  background-color: rgba(255, 255, 255, 0.2); }
+
+.MenuHome .menu {
+  padding: 0; }
+
+.menu {
   z-index: -1;
-  padding-top: 12.333px;
+  padding: 25px 0;
   top: 0;
   left: 0;
   width: 100%;
-  background: #b7abb4;
-  background-color: #b7abb4;
-  height: 100px;
+  height: 130px;
   font-family: "Brandom_grotesque_bold"; }
-  .subMenuFixed .cont-center .logo-small {
+  .menu .cont-center .logo-small {
     height: 46px;
     width: 174.5px;
     background: url(img/small-deragopyan.png);
@@ -868,44 +888,44 @@ footer p a {
     margin-right: 136.666px;
     float: left;
     margin-top: 13px; }
-  .subMenuFixed .cont-center .menufixed {
+  .menu .cont-center .menufixed {
     width: 750px;
     float: right;
     margin-right: -25px;
     margin-top: 8px; }
-    .subMenuFixed .cont-center .menufixed ul {
+    .menu .cont-center .menufixed ul {
       list-style-type: none;
       float: left;
       padding: 0;
       width: 750px;
       margin: 0;
       height: 45px; }
-      .subMenuFixed .cont-center .menufixed ul li {
+      .menu .cont-center .menufixed ul li {
         float: left;
         text-align: center;
         width: calc(100% / 6);
         position: relative;
         height: 100%; }
-        .subMenuFixed .cont-center .menufixed ul li a {
+        .menu .cont-center .menufixed ul li a {
           color: rgba(255, 255, 255, 0.6);
           text-decoration: none;
           text-transform: uppercase;
           font-size: 10px;
           display: block;
           height: 109%; }
-          .subMenuFixed .cont-center .menufixed ul li a img {
+          .menu .cont-center .menufixed ul li a img {
             display: block;
             margin: 0 auto;
             height: initial !important; }
-          .subMenuFixed .cont-center .menufixed ul li a span {
+          .menu .cont-center .menufixed ul li a span {
             position: absolute;
             top: 100%;
             width: 100%;
             left: 0; }
-        .subMenuFixed .cont-center .menufixed ul li.menu-item-25 img, .subMenuFixed .cont-center .menufixed ul li.menu-item-22 img {
+        .menu .cont-center .menufixed ul li.menu-item-25 img, .menu .cont-center .menufixed ul li.menu-item-22 img {
           position: relative;
           left: 6px; }
-  .subMenuFixed.visible {
+  .menu.visible {
     -webkit-transition: opacity 1s;
     -o-transition: opacity 1s;
     transition: opacity 1s;
@@ -1168,6 +1188,31 @@ html {
   padding: 8px;
   margin-top: 0;
   margin-bottom: 0; }
+
+.TFixed {
+  position: fixed !important;
+  top: 99px !important;
+  width: 100% !important;
+  z-index: 10 !important;
+  font-size: 20px !important; }
+  .TFixed .cont-center {
+    font-size: 20px; }
+  .TFixed .busqueda-avanzada .boton-sidebar {
+    margin-top: -40px; }
+  .TFixed input.search-field {
+    height: 30px;
+    margin-top: 2px; }
+
+.SRFixed {
+  position: fixed;
+  top: 142px; }
+
+.SLFixed {
+  position: fixed;
+  top: 142px; }
+
+.CLFixed {
+  margin-left: 200px; }
 
 .data-container .sede-column {
   width: 304px;
@@ -1512,14 +1557,16 @@ html {
           margin-top: 38px;
           margin-bottom: 13px;
           background-position: center !important;
-          background-size: cover !important; }
+          background-size: cover !important;
+          display: block; }
         .beneficios .cont-center .column2 .data-container .beneficios-all .item-beneficio .b-logo {
           height: 46px;
           width: 127px;
           margin: 0 auto;
           margin-bottom: 9px;
           background-position: center !important;
-          background-size: cover !important; }
+          background-size: cover !important;
+          display: block; }
         .beneficios .cont-center .column2 .data-container .beneficios-all .item-beneficio .b-title, .beneficios .cont-center .column2 .data-container .beneficios-all .item-beneficio .b-description {
           font-family: Brandom_grotesque_regular; }
         .beneficios .cont-center .column2 .data-container .beneficios-all .item-beneficio .b-title {
@@ -1574,13 +1621,15 @@ html {
             margin: 0 auto;
             margin-bottom: 13px;
             background-position: center !important;
-            background-size: cover !important; }
+            background-size: cover !important;
+            display: block; }
           .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row1 .b-logo {
             height: 45px;
             width: 144px;
             margin: 0 auto;
             background-position: center !important;
-            background-size: cover !important; }
+            background-size: cover !important;
+            display: block; }
           .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row1 .b-title {
             height: 40px;
             width: 144px;
@@ -1607,10 +1656,10 @@ html {
           padding-right: 15px;
           color: white;
           opacity: 0.9;
-          text-align: center;
+          text-align: justify;
           font-family: Brandom_grotesque_regular; }
       .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data {
-        width: 443.715px;
+        width: 100%;
         height: 106.611px;
         float: left;
         margin-top: 1px;

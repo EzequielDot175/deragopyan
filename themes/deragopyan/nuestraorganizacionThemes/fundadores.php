@@ -13,7 +13,7 @@
 <div class="sectionName">
 	<h2><div class="cont-center">NUESTRA ORGANIZACIÓN</div></h2>
 	<!--busqueda avanzada-->
-	<?php //include 'searchAdvanced.php'; ?>
+	<?php include __DIR__ . '/../searchAdvanced.php'; ?>
 	<!--busqueda avanzada-->
 	<div class="menu-options"></div>
 </div>

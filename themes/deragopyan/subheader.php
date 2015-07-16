@@ -3,16 +3,13 @@
 <script src="<?php bloginfo('template_directory') ?>/js/fn.js"></script>
 
 <?php $imgUri = get_site_url()."/wp-content/themes/deragopyan/img/"; ?>
-<div class="subheader">
+<div id='menu' class="menu">
 	<div class="cont-center">
-		<div class="logo">
-			<a href="<?php echo get_site_url(); ?>"><img src="<?php echo(IMG) ?>deragopyan.png" alt="logo"></a>
-		</div>
-		<div class="nav">
+		<a href="<?php echo get_site_url(); ?>"><div class="logo-small"></div></a>
+		<div class="menufixed">
 			<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
 		</div>
 	</div>
-
 </div>
 
 <div class="cont-center subcontrols">
@@ -28,10 +25,8 @@
 		</a>
 	</div>
 
-	
-	<div class="cell two">
-		
-	</div>
+	<div class="cell two"></div>
+
 	<div class="cell three">
 		<div class="right">
 			<div class="calendar">
@@ -48,119 +43,60 @@
 	</div>
 </div>
 
-<div class="subMenuFixed">
-		<div class="cont-center">
-			<a href="<?php echo get_site_url(); ?>"><div class="logo-small"></div></a>
-			<div class="menufixed">
-				<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
-			</div>
-		</div>
-</div>
+<div class="subMenuFixed"></div>
+
+<!--sidebar + titulo fixed -->
 <script>
 	jQuery(document).ready(function($) {
 	     $(window).on('scroll', function(event) {
-	         event.preventDefault();
-	         var navPosition = $('.subMenuFixed').offset().top;
-	         if (navPosition > 150) {
-	         	$('.subMenuFixed').animate({opacity: 1,zIndex: 100},0);
-	         	//$('.subMenuFixed').fadeIn('fast');
-	         }else{
-	         	$('.subMenuFixed').animate({opacity: 0,zIndex: -1},0);
-	         	//$('.subMenuFixed').fadeOut('fast');
-	         }
-	     });     
-	});
-</script>
-
-<!--sidebar fixed -->
-<script>
-	jQuery(document).ready(function($) {
-	     $(window).on('scroll', function(event) {
-
-	        sidebarfixed ();
-			titulofixed ();
-
+	        fixed ();
 	        $(window).resize(function() {
-				sidebarfixed ();
-			});
-			
-	     });     
+				fixed ();
+			});	
+	    });     
 	});
 
 
-	function sidebarfixed (){
+	function fixed (){
+		 event.preventDefault();
+	     var navPosition = $('.sectionName').offset().top;
+	     console.log(navPosition);
 
-		event.preventDefault();
-		var navPosition = $('.subMenuFixed').offset().top;
-		var windowWidth = $(window).width();
-		posicion = (windowWidth - 900 - 203 )/2;
-
-		//sidebar standard
-		if (navPosition > 150) {
-	     	$('.sidebarRightFixed').css({
-				"position":"fixed",
-				'top' : '161px',
+	     if (navPosition > 100) {
+	     	//menu
+	     	$('.menu').addClass('menu-Fixed');
+	     	//titulo
+	     	$('.sectionName').addClass('TFixed');
+	     	//sidebar
+	     	var windowWidth = $(window).width();
+	     	var posicion = (windowWidth - 900 - 203 )/2;
+			$('.sidebarRightFixed').css({
 				'right' : posicion +'px'
 			});
-			$('.sidebarLeftFixed').css({
-				"position":"fixed",
-				'top' : '161px',
-			});
-			$('.contenedorLeftFixed').css({
-				"margin-left":"200px"
-			});
-	    }else{
-	     	$('.sidebarRightFixed').css({
-				"position":"relative",
-				'top' : '0',
-				'right' : '0'
-			});
-			$('.sidebarLeftFixed').css({
-				"position":"relative",
-				'top' : '0',
-			});
-			$('.contenedorLeftFixed').css({
-				"margin-left":"0px"
-			});
-		}
+	     	$('.sidebarRightFixed').addClass('SRFixed');
+			$('.sidebarLeftFixed').addClass('SLFixed');
+			$('.contenedorLeftFixed').addClass('CLFixed');
+	     }else{
+	     	//menu
+	     	$('.menu').removeClass('menu-Fixed');
+	     	//titulo
+	     	$('.sectionName').removeClass('TFixed');
+	     	//sidebar
+	     	$('.sidebarRightFixed').removeClass('SRFixed');
+			$('.sidebarLeftFixed').removeClass('SLFixed');
+			$('.contenedorLeftFixed').removeClass('CLFixed');
+	     }
 
-		//sidebar en pagina con slider
+	    //sidebar en pagina con slider
 		if (navPosition > 450) {
 	     	$('.sidebarRight2Fixed').css({
-				"position":"fixed",
-				'top' : '161px',
 				'right' : posicion +'px'
 			});
+	     	$('.sidebarRight2Fixed').addClass('SRFixed');
 	    }else{
-	     	$('.sidebarRight2Fixed').css({
-				"position":"relative",
-				'top' : '0',
-				'right' : '0'
-			});
+	     	$('.sidebarRight2Fixed').removeClass('SRFixed');
 		}
 	}
 
-	// titulo fixed
-	function titulofixed (){
-
-		event.preventDefault();
-		var navPosition = $('.subMenuFixed').offset().top;
-		var windowWidth = $(window).width();
-
-		//sidebar en pagina con slider
-		if (navPosition > 150) {
-	     	$('.sectionName').css({
-				"position":"fixed",
-				'top' : '99px',
-				'width' : '100%',
-				'z-index' : '10',
-			});
-	    }else{
-	     	$('.sectionName').css({
-				"position":"relative",
-				'top' : '0',
-			});
-		}
-	}
 </script>
-<!--sidebar titulo -->
+

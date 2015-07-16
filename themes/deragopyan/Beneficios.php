@@ -28,10 +28,10 @@ get_header(); ?>
 				<div class="beneficios-all">
 					<?php foreach(Beneficios::getData() as $k => $v): ?>
 					<div class="item-beneficio">
-						<div class="b-mask-bg" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
+						<div class="b-mask-bg" style="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
 						<div class="b-mask">
-							<div class="b-image" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
-							<div class="b-logo" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?> )"></div>
+							<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
+							<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
 							<div class="b-title"><?php echo($v->nombre) ?></div>
 							<div class="b-description"><?php 
 							echo($v->descripcion_basica) ?></div>
@@ -43,11 +43,14 @@ get_header(); ?>
 					</div>
 					<?php endforeach; ?>
 				</div>
+				<div id="imprimime">
+					
+				
 				<div class="beneficio-by-id">
 					<div class="b-details">
 						<div class="row1">
-							<div class="b-image"></div>
-							<div class="b-logo"></div>
+							<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
+							<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
 							<div class="b-title"></div>
 							<div class="b-pdescription"></div>
 						</div>
@@ -61,7 +64,38 @@ get_header(); ?>
 						<input type="text" placeholder="Ingrese su email ..">
 						<button>OK</button>
 						<a id="download">Descargar beneficio</a>
+
+						<button id="imprimirA">
+						  IMPRIMIR
+						</button>
+						
+						<script type="text/javascript">
+						$( document ).ready(function() {
+						    console.log( "ready!" );
+						    $('#imprimirA').click(function(event) {
+						    	imprimir();
+						    });
+						});
+						function imprimir(){
+							var objeto=document.getElementById('imprimime');  //obtenemos el objeto a imprimir
+							var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
+							ventana.document.write('<link rel="stylesheet" type="text/css" href="http://www.deragopyan.com/wp-content/themes/deragopyan/imprimir.css"></head><body>');
+							ventana.document.write('<div class="impresionBeneficio">');
+							ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
+							ventana.document.write('</div>');
+							/*var cssLink=document.createElement("link");
+							cssLink.setAttribute("rel", "stylesheet");
+							cssLink.setAttribute("type", "text/css");
+							cssLink.setAttribute("href", "http://www.deragopyan.com/wp-content/themes/deragopyan/imprimir.css");
+							ventana.document.getElementsByTagName("head")[0].appendChild(cssLink);*/
+							//ventana.print();  //imprimimos la ventana
+							//ventana.close();  //cerramos la ventana
+						}
+						</script>
+
 					</div>
+				</div>
+		
 				</div>
 			</div>
 		</div>

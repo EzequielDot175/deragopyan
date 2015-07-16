@@ -1,0 +1,101 @@
+//IMPRESION
+
+.impresionBeneficio{
+
+	.send-data{
+		display: none;
+	}
+
+	.beneficio-by-id{
+		float: left;
+		height: 100%;
+		width:100%;
+		display: none;
+		background-color: #d1d1d1 !important;
+
+		.b-details{
+			width: 100%;
+			float: left;
+			height: 328px;
+			background: rgba(white, 0.3);
+			background-color: rgba(white, 0.3);
+
+			.row1,.row2{
+				float: left;
+			}
+			.row1{
+				width:300px;
+				height: 100%;
+				padding-top: 38px;
+				
+				.b-image{
+					border-radius: 50%;
+					background: rgba(white, 0.3);
+					background-color: rgba(white, 0.3);
+					height: 104px;
+					width: 104px;
+					margin: 0 auto;
+					margin-bottom: 13px;
+					background-position: center!important;
+					background-size: cover!important;
+				}
+				.b-logo{
+					height: 45px;
+					width: 144px;
+					margin: 0 auto;
+					background-position: center!important;
+						background-size: cover!important;
+				}
+				.b-title{
+					height: 40px;
+					width: 144px;
+					margin: 0 auto;
+					font-family: Brandom_grotesque_regular;
+					opacity: 70%;
+					color: white;
+					text-align: center;
+					font-size: 28px;
+					opacity: 0.7;
+
+				}
+				.b-pdescription{
+					height: 73px;
+					width: 144px;
+					margin: 0 auto;
+					font-size: 14px;
+					color: #666;
+					text-align: justify;
+					opacity: 0.9;
+					text-align: center;
+					font-family: Brandom_grotesque_regular;
+				}
+			}
+			.row2{
+				width:300px;
+				height: 100%;
+				padding-left: 9px;
+				padding-right: 15px;
+				color: white;
+				opacity: 0.9;
+				text-align: center;
+				font-family: Brandom_grotesque_regular;
+
+				p{
+					color: #666;
+					text-align: justify;
+				}
+
+			}
+		}
+		.b-map{
+			margin-left: 2px;
+			width: 300px;
+			float: left;
+			height: 328px;
+			background: rgba(white, 0.3);
+			background-color: rgba(white, 0.3);
+		}
+	}
+
+
+}

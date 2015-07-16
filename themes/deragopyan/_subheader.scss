@@ -146,9 +146,6 @@ html {
 	color:rgba(255, 255, 255, 0.6);
 }
 
-
-
-
 .sub-noticias {
 	max-width:100%;
 	margin-left:auto;
@@ -316,5 +313,42 @@ html {
 	margin-bottom:0;
 }
 
+//estilos sidebar y titulo fixed
+.TFixed{
+	position : fixed !important;
+	top : 99px !important;
+	width : 100% !important;
+	z-index : 10 !important;
+	font-size: 20px !important;
 
+	.cont-center {
+		font-size: 20px;
+	}
 
+	.busqueda-avanzada .boton-sidebar {
+		margin-top: -40px;
+	}
+
+	input.search-field {
+		height: 30px;
+		margin-top: 2px;
+	}
+}
+
+//sidebar right
+.SRFixed{
+	position : fixed;
+	top : 142px;
+	//position rigth en archivo _subheader.php
+}
+
+//sidebar left
+.SLFixed{
+	position : fixed;
+	top : 142px;
+}
+
+//contenedor
+.CLFixed {
+	margin-left : 200px;
+}
