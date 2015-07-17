@@ -24,11 +24,15 @@ $tiempo = new Wheater();
 get_header();
 
 
- ?>
+?>
 <header>
    	<div class="bg-main-header">
 	    <div class="container">
+	    
 		<div class="row">
+			<div class="search">
+				<?php get_search_form(); ?>
+			</div>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo"></a>
 		</div><!-- /row -->
 		</div><!-- /container -->	
