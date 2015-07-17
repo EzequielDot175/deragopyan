@@ -43,63 +43,58 @@ get_header(); ?>
 					</div>
 					<?php endforeach; ?>
 				</div>
+				<!--imprimir-->
 				<div id="imprimime">
-					
-				<div class="beneficio-by-id">
-					<div class="b-details">
-						<div class="row1">
-							<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
-							<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
-							<div class="b-title"></div>
-							<div class="b-pdescription"></div>
+					<div class="beneficio-by-id">
+
+						<div class="b-details">
+							<div class="row1">
+								<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
+								<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
+								<div class="b-title"></div>
+								<div class="b-pdescription"></div>
+							</div>
+							<div class="row2" ></div>
 						</div>
-						<div class="row2" >	
+
+						<div class="b-map" id="googleMaps"></div>
+
+						<div class="send-data">
+							<p>Deseo recibir información sobre este Beneficio</p>
+							<input type="text" placeholder="Ingrese su email ..">
+							<button>OK</button>
 						</div>
-					</div>
-					<div class="b-map" id="googleMaps">
-					</div>
-					<div class="send-data">
-						<p>Deseo recibir información sobre este Beneficio</p>
-						<input type="text" placeholder="Ingrese su email ..">
-						<button>OK</button>
-					</div>
 
-					<div class="send-data">
+						<div class="send-data">
+							<div id ="imprimirA" class="block-print">
+								<p class="text-icon">Imprimir</p>
+								<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-print2.png" alt="">
+							</div>
+							<script type="text/javascript">
+								$( document ).ready(function() {
+								    console.log( "ready!" );
+								    $('#imprimirA').click(function(event) {
+								    	imprimir();
+								    });
+								});
+								function imprimir(){
+									window.print();
+								}
+							</script>
+						</div>
 
-					<div id ="imprimirA" class="block-print">
-						<p class="text-icon">Imprimir</p>
-						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-print2.png" alt="">
+						<div class="send-data">
+							<div class="block-pdf">
+								<a id="download">
+									<p class="text-icon">Descargar PDF</p>
+									<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
+								</a>
+							</div>	
+						</div>
 
 					</div>
-						
-						<script type="text/javascript">
-						$( document ).ready(function() {
-						    console.log( "ready!" );
-						    $('#imprimirA').click(function(event) {
-						    	imprimir();
-						    });
-						});
-						function imprimir(){
-							window.print();
-						}
-						</script>
-					</div>
-
-					<div class="send-data">
-
-					<div class="block-pdf">
-						<a id="download">
-							<p class="text-icon">Descargar PDF</p>
-							<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
-						</a>
-					</div>
-
-						
-					</div>
-
 				</div>
-		
-				</div>
+				<!--imprimir-->
 			</div>
 		</div>
 		<div class="column1 panel-buttons sidebarRightFixed">
@@ -248,7 +243,8 @@ get_header(); ?>
 		$('#download').click(function(event) {
 			event.preventDefault();
 			$.fn.plug("pdf",{get:"example"},function(a){
-				window.open(a,"_blank");
+				//window.open(a,"_blank");
+				console.log(a);
 			});
 
 		});

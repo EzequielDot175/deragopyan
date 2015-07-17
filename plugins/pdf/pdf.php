@@ -25,15 +25,36 @@ if(!class_exists('PDF'))
 		} 
 		
 		public static function html(){
-			$html = '<html >
-			<head></head>
-			<body>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad ipsam distinctio iusto, eaque. Earum nesciunt natus cumque sit adipisci soluta! Perferendis velit et quaerat similique odit consectetur quia quibusdam non.</p>
-				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque dicta possimus dolores distinctio a amet consequatur sint nostrum quam, at tenetur veritatis, et ab sapiente ipsum. Quas, nostrum quaerat facilis!</div>
-				<div>Consequuntur sunt molestiae esse ad officiis reprehenderit fugit similique iste, eaque soluta et quod nulla eum vel culpa dolores sequi praesentium qui, repellendus architecto. Voluptatibus cumque suscipit aliquam vitae quisquam.</div>
-				<div>Esse autem quidem deserunt possimus, consequatur delectus suscipit perferendis aut ex ab, porro explicabo amet facere numquam ipsa expedita, quis maiores voluptatum sint vitae minus quasi consequuntur aliquid officiis. Ea.</div>
-			</body>
-			</html>';
+			$html = '
+				<html>
+					<head>
+						<style>
+							p{
+								color: #666;
+							}
+							
+						</style>
+					</head>
+					<body>
+						<div class="b-details">
+							<div class="row1" style="width: 300px; float:left; display: block">
+								<div style="width: 300px; float:left; display: block">
+									<img class="b-image" style="width: 150px; border-radius: 100%; margin-left:80px" src="http://www.deragopyan.com/wp-content/uploads/beneficios/24296de1807c8d64c7a4e9eac7afc687.jpg">
+								</div>
+								<div style="width:300px; float:left; display: block">
+									<img class="b-logo" style="width: 150px; margin-left:80px; margin-top: 10px; margin-bottom: 10px" src="http://www.deragopyan.com/wp-content/uploads/beneficios/1f94e78459c5cf76c861b6a1238fc651.png">
+								</div>
+								<div class="b-title" style="color:#666; text-transform:uppercase; text-align:center; font-size: 25px; margin: 10px 0;" >20% OFF</div>
+								<div class="b-pdescription" style="color: #666; text-align: justify" >Lorem ipsum dolor sit amet, consectet dolor sit amet, consectet.</div>
+							</div>
+							<div class="row2" style="width: 300px; float:left; display: block; text-align: justify" >
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+							</div>
+						</div>
+						<div class="b-map" id="googleMaps" style="width: 300px; heigth: 300px;">
+						</div>
+					</body>
+				</html>';
 
 			self::factory($html,"example.pdf");
 			
@@ -73,7 +94,7 @@ if(!class_exists('PDF'))
 		public function ajax(){
 			switch ($_POST['get']) {
 				case 'example':
-					 self::html();
+					self::html();
 					break;
 				
 				default:
