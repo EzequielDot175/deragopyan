@@ -24,7 +24,7 @@ get_header();
 </div>
 
 <div class="procedimientos-content deragopyan-container">
-	<div class="center-procedimientos">
+	<div class="center-procedimientos cont-center">
 		
 		<div class="column2 sidebarLeftFixed">
 			<div class="fullwidth box-primary btn-procedimientos"><span class="text-proc">GERENCIA</span> <span class="triangle-up"></span></div>

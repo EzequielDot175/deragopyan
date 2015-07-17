@@ -1836,6 +1836,10 @@ html {
     .slideNoticias .orbit-container .orbit-slide-number, .slideNoticias .noticias-orbit-content .orbit-slide-number {
       display: none; }
 
+.background-noticias {
+  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2); }
+
 .noticias .content-1 {
   padding-top: 30px;
   padding-bottom: 29px; }
@@ -2401,13 +2405,9 @@ select {
   #ui-datepicker-div .ui-datepicker-calendar .ui-datepicker-today a {
     color: #B1005D; }
 
-.page-template-procedimientos .footer-home {
-  display: none; }
-
 .procedimientos-content {
   background: rgba(178, 138, 170, 0.5);
-  background-color: rgba(178, 138, 170, 0.5);
-  height: 700px; }
+  background-color: rgba(178, 138, 170, 0.5); }
   .procedimientos-content .center-procedimientos {
     min-height: 600px;
     width: 1101px;
