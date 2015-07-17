@@ -21,8 +21,6 @@ $path =  $_SERVER["REQUEST_URI"];
 </head>
 
 <script>
-
-
 $(function(){
 
      $('a[href*=#]').click(function() {
@@ -43,11 +41,8 @@ $(function(){
                  return false;
 
             }
-
        }
-
    });
-
 });
 
 

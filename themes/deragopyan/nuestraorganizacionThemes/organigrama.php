@@ -6,56 +6,20 @@
  *
  * @package Deragopyan
  */
+?>
 
-
-
- ?>
-    <?php //OrgranigramaDeragopyan::getMenuOrgani(); ?>
+<?php //OrgranigramaDeragopyan::getMenuOrgani(); ?>
 
 <?php require get_template_directory()."/subheader.php"; ?>
 
-
-
-<div class="sectionName">
+<div class="sectionName ">
   <h2><div class="cont-center">NUESTRA ORGANIZACIÓN</div></h2>
-  <!--sidebar-->
-  <div class="cont-center">
-    <div class="sidebar">
-      <div  class="boton-sidebar">
-        <img id="mostrar-sidebar" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-bottom.png" alt="">
-        <img id="ocultar-sidebar" class="oculta" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-top.png" alt="">
-      </div>
-      <div class="column1 mr sidebarDesplegable">
-        <input type="text" placeholder="Búsqueda avanzada" class="search-input">
-        <div class="filter-btn" >
-          <span class="numbers number-1">1</span>
-          <input type="text" placeholder="FECHA" class="date-input" id="calendar">
-        </div>
-        <div class="filter-btn" > 
-          <span class="numbers number-2">2</span>
-          <span class="text">NOMBRE</span>
-          <span class="small-arrow-down"></span>
-        </div>
-        <div class="filter-btn">
-          <span class="numbers number-2">3</span>
-          <span class="text">CATEGORIA</span>
-          <span class="small-arrow-down"></span>
-        </div>
-        <div class="filter-btn">
-          <span class="numbers number-2">4</span>
-          <input type="text" placeholder="PALABRA CLAVE" class="date-input">
-        </div>
-        <div class="submit-search-form">
-          <button>FILTRAR</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--//sidebar-->
-  <div class="menu-options">
-
-  </div>
+  <!--busqueda avanzada-->
+  <?php include __DIR__ . '/../searchAdvanced.php'; ?>
+  <!--busqueda avanzada-->
+  <div class="menu-options"></div>
 </div>
+
 <div class="background-sections deragopyan-container beneficios nuestra-organizacion">
   <div class="cont-center">
     
@@ -67,7 +31,7 @@
     
       
     </div>
-    <div class="column1 panel-buttons">
+    <div class="column1 panel-buttons sidebarRightFixed">
       <div class="filter-btn">
         <a href="/nuestra-organizacion/">MISIÓN, VISIÓN Y VALORES</a>
       </div>

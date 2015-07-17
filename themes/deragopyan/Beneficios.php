@@ -7,69 +7,31 @@
  * @package Deragopyan
  */
 
-
 get_header(); ?>
+
 <?php include 'subheader.php'; ?>
+
 <!-- CONTENT -->
 <div class="sectionName">
 	<h2><div class="cont-center"><?php echo $wp_query->post->post_title; ?></div></h2>
-	
-	<!--sidebar-->
-	<div class="cont-center">
-		<div class="sidebar">
-			<div  class="boton-sidebar">
-				<img id="mostrar-sidebar" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-bottom.png" alt="">
-				<img id="ocultar-sidebar" class="oculta" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-top.png" alt="">
-			</div>
-			<div class="column1 mr sidebarDesplegable">
-				<input type="text" placeholder="Búsqueda avanzada" class="search-input">
-				<div class="filter-btn" >
-					<span class="numbers number-1">1</span>
-					<input type="text" placeholder="FECHA" class="date-input" id="calendar">
-				</div>
-				<div class="filter-btn" > 
-					<span class="numbers number-2">2</span>
-					<span class="text">NOMBRE</span>
-					<span class="small-arrow-down"></span>
-				</div>
-				<div class="filter-btn">
-					<span class="numbers number-2">3</span>
-					<span class="text">CATEGORIA</span>
-					<span class="small-arrow-down"></span>
-				</div>
-				<div class="filter-btn">
-					<span class="numbers number-2">4</span>
-					<input type="text" placeholder="PALABRA CLAVE" class="date-input">
-				</div>
-				<div class="submit-search-form">
-					<button>FILTRAR</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--//sidebar-->
-
-	<div class="menu-options">
-
-	
-		
-	</div>
+	<!--busqueda avanzada-->
+	<?php include 'searchAdvanced.php'; ?>
+	<!--busqueda avanzada-->
+	<div class="menu-options"></div>
 </div>
-
 
 <div class="background-sections deragopyan-container beneficios">
 	<div class="cont-center ">
-
 		<div class="column2 mr">
 			<div class="data-container">
-				<div class="navigator">Beneficios > <span class="inside"></span></div>
+				<div class="navigator">Beneficios<span class="inside"></span></div>
 				<div class="beneficios-all">
 					<?php foreach(Beneficios::getData() as $k => $v): ?>
 					<div class="item-beneficio">
-						<div class="b-mask-bg" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
+						<div class="b-mask-bg" style="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
 						<div class="b-mask">
-							<div class="b-image" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?> )"></div>
-							<div class="b-logo" style="background:url(<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?> )"></div>
+							<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
+							<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
 							<div class="b-title"><?php echo($v->nombre) ?></div>
 							<div class="b-description"><?php 
 							echo($v->descripcion_basica) ?></div>
@@ -81,11 +43,13 @@ get_header(); ?>
 					</div>
 					<?php endforeach; ?>
 				</div>
+				<div id="imprimime">
+					
 				<div class="beneficio-by-id">
 					<div class="b-details">
 						<div class="row1">
-							<div class="b-image"></div>
-							<div class="b-logo"></div>
+							<img class="b-image" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->foto) ?>">
+							<img class="b-logo" src="<?php echo(wp_upload_dir()["baseurl"].'/beneficios/'.$v->logo) ?>">
 							<div class="b-title"></div>
 							<div class="b-pdescription"></div>
 						</div>
@@ -98,15 +62,49 @@ get_header(); ?>
 						<p>Deseo recibir información sobre este Beneficio</p>
 						<input type="text" placeholder="Ingrese su email ..">
 						<button>OK</button>
-						<a id="download">Descargar beneficio</a>
 					</div>
+
+					<div class="send-data">
+
+					<div id ="imprimirA" class="block-print">
+						<p class="text-icon">Imprimir</p>
+						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-print2.png" alt="">
+
+					</div>
+						
+						<script type="text/javascript">
+						$( document ).ready(function() {
+						    console.log( "ready!" );
+						    $('#imprimirA').click(function(event) {
+						    	imprimir();
+						    });
+						});
+						function imprimir(){
+							window.print();
+						}
+						</script>
+					</div>
+
+					<div class="send-data">
+
+					<div class="block-pdf">
+						<a id="download">
+							<p class="text-icon">Descargar PDF</p>
+						</a>
+						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
+					</div>
+
+						
+					</div>
+
+				</div>
+		
 				</div>
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn" style="margin-top:0;">
 				<a id="back">TODOS LOS BENEFICIOS 
-
 					<ul class="subsedes">
 						<?php Beneficios::getBeneficiosBySede(true) ?>
 					</ul>

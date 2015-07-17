@@ -9,54 +9,21 @@
 
 $noticias = new Noticias();
 
-
-
-
-
 get_header(); ?>
+
 <?php require_once('subheader.php'); ?>
 
 <div class="sectionName">
 	<h2><div class="cont-center"><?php echo $wp_query->post->post_title; ?></div></h2>
-	<!--sidebar-->
-	<div class="cont-center">
-		<div class="sidebar">
-			<div  class="boton-sidebar">
-				<img id="mostrar-sidebar" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-bottom.png" alt="">
-				<img id="ocultar-sidebar" class="oculta" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/flecha-galerry-top.png" alt="">
-			</div>
-			<div class="column1 mr sidebarDesplegable">
-				<input type="text" placeholder="Búsqueda avanzada" class="search-input">
-				<div class="filter-btn" >
-					<span class="numbers number-1">1</span>
-					<input type="text" placeholder="FECHA" class="date-input" id="calendar">
-				</div>
-				<div class="filter-btn" > 
-					<span class="numbers number-2">2</span>
-					<span class="text">NOMBRE</span>
-					<span class="small-arrow-down"></span>
-				</div>
-				<div class="filter-btn">
-					<span class="numbers number-2">3</span>
-					<span class="text">CATEGORIA</span>
-					<span class="small-arrow-down"></span>
-				</div>
-				<div class="filter-btn">
-					<span class="numbers number-2">4</span>
-					<input type="text" placeholder="PALABRA CLAVE" class="date-input">
-				</div>
-				<div class="submit-search-form">
-					<button>FILTRAR</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--//sidebar-->
+	<!--busqueda avanzada-->
+	<?php include 'searchAdvanced.php'; ?>
+	<!--busqueda avanzada-->
+	<div class="menu-options"></div>
 </div>
 
 <?php 
 	$noticias->slideshow();
- ?>
+?>
 
 <div class="background-sections deragopyan-container beneficios noticias">
 	<div class="cont-center ">
@@ -233,7 +200,7 @@ get_header(); ?>
 				<!-- Box content 3 -->
 			</div>
 		</div>
-		<div class="column1 panel-buttons">
+		<div class="column1 panel-buttons sidebarRight2Fixed">
 			<div class="filter-btn">
 				CATEGORÍA 1
 			</div>

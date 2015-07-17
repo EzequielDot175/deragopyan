@@ -23,7 +23,7 @@ html {
 }
 
 .subheader {
-	height:153px;
+	height:120px;
 	background-color:rgba(255, 255, 255, 0.15);
 	background:rgba(255, 255, 255, 0.15);
 }
@@ -33,6 +33,7 @@ html {
 	max-width:1100px;
 	margin-left:auto;
 	margin-right:auto;
+	padding-top: 20px;	
 }
 
 .subheader .cont-center::after {
@@ -64,9 +65,9 @@ html {
 	margin-right:2.35765%;
 	width:14.70196%;
 	margin:0;
-	width:232px;
-	margin-left:32px;
+	width:264px;
 	margin-right:57px;
+	margin-top: 20px;
 }
 
 .subheader .cont-center .logo:last-child {
@@ -76,7 +77,7 @@ html {
 .subheader .cont-center .logo img {
 	display:block;
 	width:227px;
-	margin:0 auto;
+	margin:0;
 	position:relative;
 	top:-9px;
 }
@@ -144,9 +145,6 @@ html {
 	text-decoration:none;
 	color:rgba(255, 255, 255, 0.6);
 }
-
-
-
 
 .sub-noticias {
 	max-width:100%;
@@ -315,5 +313,42 @@ html {
 	margin-bottom:0;
 }
 
+//estilos sidebar y titulo fixed
+.TFixed{
+	position : fixed !important;
+	top : 99px !important;
+	width : 100% !important;
+	z-index : 10 !important;
+	font-size: 20px !important;
 
+	.cont-center {
+		font-size: 20px;
+	}
 
+	.busqueda-avanzada .boton-sidebar {
+		margin-top: -40px;
+	}
+
+	input.search-field {
+		height: 30px;
+		margin-top: 2px;
+	}
+}
+
+//sidebar right
+.SRFixed{
+	position : fixed;
+	top : 142px;
+	//position rigth en archivo _subheader.php
+}
+
+//sidebar left
+.SLFixed{
+	position : fixed;
+	top : 142px;
+}
+
+//contenedor
+.CLFixed {
+	margin-left : 200px;
+}

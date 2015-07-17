@@ -3,19 +3,13 @@
 <script src="<?php bloginfo('template_directory') ?>/js/fn.js"></script>
 
 <?php $imgUri = get_site_url()."/wp-content/themes/deragopyan/img/"; ?>
-<div class="subheader">
+<div id='menu' class="menu">
 	<div class="cont-center">
-		<div class="search">
-			<?php get_search_form(); ?>
-		</div>
-		<div class="logo">
-			<a href="<?php echo get_site_url(); ?>"><img src="<?php echo(IMG) ?>deragopyan.png" alt="logo"></a>
-		</div>
-		<div class="nav">
+		<a href="<?php echo get_site_url(); ?>"><div class="logo-small"></div></a>
+		<div class="menufixed">
 			<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
 		</div>
 	</div>
-
 </div>
 
 <div class="cont-center subcontrols">
@@ -31,10 +25,8 @@
 		</a>
 	</div>
 
-	
-	<div class="cell two">
-		
-	</div>
+	<div class="cell two"></div>
+
 	<div class="cell three">
 		<div class="right">
 			<div class="calendar">
@@ -51,25 +43,60 @@
 	</div>
 </div>
 
-<div class="subMenuFixed">
-		<div class="cont-center">
-			<a href="<?php echo get_site_url(); ?>"><div class="logo-small"></div></a>
-			<div class="menufixed">
-				<?php wp_nav_menu( array( 'menu' => 'Menu home' ) ); ?>
-			</div>
-		</div>
-</div>
+<div class="subMenuFixed"></div>
+
+<!--sidebar + titulo fixed -->
 <script>
 	jQuery(document).ready(function($) {
 	     $(window).on('scroll', function(event) {
-	         event.preventDefault();
-	         var navPosition = $('.subMenuFixed').offset().top;
-	         if (navPosition > 150) {
-	         	$('.subMenuFixed').animate({opacity: 1,zIndex: 100},100);
-	         }else{
-	         	$('.subMenuFixed').animate({opacity: 0,zIndex: -1},100);
-
-	         }
-	     });     
+	        fixed ();
+	        $(window).resize(function() {
+				fixed ();
+			});	
+	    });     
 	});
+
+
+	function fixed (){
+		 event.preventDefault();
+	     var navPosition = $('.sectionName').offset().top;
+	     console.log(navPosition);
+
+	     if (navPosition > 100) {
+	     	//menu
+	     	$('.menu').addClass('menu-Fixed');
+	     	//titulo
+	     	$('.sectionName').addClass('TFixed');
+	     	//sidebar
+	     	var windowWidth = $(window).width();
+	     	var posicion = (windowWidth - 900 - 203 )/2;
+			$('.sidebarRightFixed').css({
+				'right' : posicion +'px'
+			});
+	     	$('.sidebarRightFixed').addClass('SRFixed');
+			$('.sidebarLeftFixed').addClass('SLFixed');
+			$('.contenedorLeftFixed').addClass('CLFixed');
+	     }else{
+	     	//menu
+	     	$('.menu').removeClass('menu-Fixed');
+	     	//titulo
+	     	$('.sectionName').removeClass('TFixed');
+	     	//sidebar
+	     	$('.sidebarRightFixed').removeClass('SRFixed');
+			$('.sidebarLeftFixed').removeClass('SLFixed');
+			$('.contenedorLeftFixed').removeClass('CLFixed');
+	     }
+
+	    //sidebar en pagina con slider
+		if (navPosition > 450) {
+	     	$('.sidebarRight2Fixed').css({
+				'right' : posicion +'px'
+			});
+	     	$('.sidebarRight2Fixed').addClass('SRFixed');
+	    }else{
+	     	$('.sidebarRight2Fixed').removeClass('SRFixed');
+		}
+	}
+
 </script>
+

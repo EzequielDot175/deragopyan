@@ -20,12 +20,12 @@
 	.sede-selection{
 		cursor: pointer;
 		padding-top: 47px;
-		width: 384px;
+		width: 500px;
 		margin: 0 auto;
 		height: 100%;
 		.sede-item-selection{
-			width: 116px;
-			height: 122.5px;
+			width: 148px;
+			height: 160px;
 			float: left;
 			margin-right: 18px;
 			margin-bottom: 16px;
@@ -36,7 +36,7 @@
 				margin-right: 0;
 			}
 			.item-sede-image{
-				height: 74px;
+				height: 95px;
 				float: left;
 				width: 100%;
 				&.default-image{
@@ -55,11 +55,13 @@
 				h4{
 					margin: 0;
 					margin-top: 8px;
-					font-family: Times_italic;
-					font-style: italic;
+					font-weight: normal;
 					font-size: 13px;
 					color: #7C6B6B;			
 					text-align: center;
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
 				}
 
 			}

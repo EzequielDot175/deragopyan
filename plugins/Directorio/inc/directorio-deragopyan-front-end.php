@@ -60,34 +60,14 @@
 
 <div class="sectionName">
 	<h2><div class="cont-center">Directorio</div></h2>
+	<!--busqueda avanzada-->
+	<?php include __DIR__ . '/../../../themes/deragopyan/searchAdvanced.php"'; ?>
+	<!--busqueda avanzada-->
+	<div class="menu-options"></div>
 </div>
 <div class="background-sections deragopyan-container directorio">
 	<div class="cont-center ">
-		<div class="column1 mr" >
-			<input type="text" placeholder="Búsqueda avanzada" class="search-input">
-			<div class="filter-btn">
-				<span class="numbers number-1">1</span>
-				<input type="text" placeholder="FECHA" class="date-input" id="calendar">
-			</div>
-			<div class="filter-btn">
-				<span class="numbers number-2">2</span>
-				<span class="text">NOMBRE</span>
-				<span class="small-arrow-down"></span>
-			</div>
-			<div class="filter-btn">
-				<span class="numbers number-2">3</span>
-				<span class="text">CATEGORIA</span>
-				<span class="small-arrow-down"></span>
-			</div>
-			<div class="filter-btn">
-				<span class="numbers number-2">4</span>
-				<input type="text" placeholder="PALABRA CLAVE" class="date-input">
-			</div>
-
-			<div class="submit-search-form">
-				<button>FILTRAR</button>
-			</div>
-		</div>
+		
 		<div class="column2 mr">
 			<?php foreach($rows as $kGerencia => $vGerencia): ?>
 			<div class="directorio-gerencia">
@@ -164,7 +144,7 @@
 				</div>
 			</div>
 	</div>
-	<div class="column1 panel-buttons">
+	<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn back">
 				TODAS LAS GERENCIAS
 			</div>
