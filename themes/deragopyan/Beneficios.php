@@ -24,7 +24,7 @@ get_header(); ?>
 	<div class="cont-center ">
 		<div class="column2 mr">
 			<div class="data-container">
-				<div class="navigator">Beneficios > <span class="inside"></span></div>
+				<div class="navigator">Beneficios<span class="inside"></span></div>
 				<div class="beneficios-all">
 					<?php foreach(Beneficios::getData() as $k => $v): ?>
 					<div class="item-beneficio">
@@ -45,7 +45,6 @@ get_header(); ?>
 				</div>
 				<div id="imprimime">
 					
-				
 				<div class="beneficio-by-id">
 					<div class="b-details">
 						<div class="row1">
@@ -63,11 +62,15 @@ get_header(); ?>
 						<p>Deseo recibir información sobre este Beneficio</p>
 						<input type="text" placeholder="Ingrese su email ..">
 						<button>OK</button>
-						<a id="download">Descargar beneficio</a>
+					</div>
 
-						<button id="imprimirA">
-						  IMPRIMIR
-						</button>
+					<div class="send-data">
+
+					<div id ="imprimirA" class="block-print">
+						<p class="text-icon">Imprimir</p>
+						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-print2.png" alt="">
+
+					</div>
 						
 						<script type="text/javascript">
 						$( document ).ready(function() {
@@ -77,23 +80,23 @@ get_header(); ?>
 						    });
 						});
 						function imprimir(){
-							var objeto=document.getElementById('imprimime');  //obtenemos el objeto a imprimir
-							var ventana=window.open('','_blank');  //abrimos una ventana vacía nueva
-							ventana.document.write('<link rel="stylesheet" type="text/css" href="http://www.deragopyan.com/wp-content/themes/deragopyan/imprimir.css"></head><body>');
-							ventana.document.write('<div class="impresionBeneficio">');
-							ventana.document.write(objeto.innerHTML);  //imprimimos el HTML del objeto en la nueva ventana
-							ventana.document.write('</div>');
-							/*var cssLink=document.createElement("link");
-							cssLink.setAttribute("rel", "stylesheet");
-							cssLink.setAttribute("type", "text/css");
-							cssLink.setAttribute("href", "http://www.deragopyan.com/wp-content/themes/deragopyan/imprimir.css");
-							ventana.document.getElementsByTagName("head")[0].appendChild(cssLink);*/
-							//ventana.print();  //imprimimos la ventana
-							//ventana.close();  //cerramos la ventana
+							window.print();
 						}
 						</script>
-
 					</div>
+
+					<div class="send-data">
+
+					<div class="block-pdf">
+						<a id="download">
+							<p class="text-icon">Descargar PDF</p>
+						</a>
+						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
+					</div>
+
+						
+					</div>
+
 				</div>
 		
 				</div>
@@ -102,7 +105,6 @@ get_header(); ?>
 		<div class="column1 panel-buttons sidebarRightFixed">
 			<div class="filter-btn" style="margin-top:0;">
 				<a id="back">TODOS LOS BENEFICIOS 
-
 					<ul class="subsedes">
 						<?php Beneficios::getBeneficiosBySede(true) ?>
 					</ul>

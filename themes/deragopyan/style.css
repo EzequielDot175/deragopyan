@@ -1496,10 +1496,14 @@ html {
     border-color: rgba(255, 255, 255, 0.5);
     padding: 10px; }
 
+@media print {
+  .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row2 {
+    color: #666; }
+
+  #menu {
+    display: none; } }
 .beneficios .cont-center .column2 {
-  margin-right: 3px;
-  background: rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.2); }
+  margin-right: 3px; }
   .beneficios .cont-center .column2 .data-container {
     float: left;
     height: inherit;
@@ -1601,7 +1605,7 @@ html {
       width: 100%;
       display: none; }
       .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details {
-        width: 543.715px;
+        width: 576px;
         float: left;
         height: 328px;
         background: rgba(255, 255, 255, 0.3);
@@ -1609,7 +1613,7 @@ html {
         .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row1, .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row2 {
           float: left; }
         .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row1 {
-          width: 220px;
+          width: 260px;
           height: 100%;
           padding-top: 38px; }
           .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row1 .b-image {
@@ -1650,7 +1654,7 @@ html {
             text-align: center;
             font-family: Brandom_grotesque_regular; }
         .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-details .row2 {
-          width: 223px;
+          width: 310px;
           height: 100%;
           padding-left: 9px;
           padding-right: 15px;
@@ -1659,14 +1663,15 @@ html {
           text-align: justify;
           font-family: Brandom_grotesque_regular; }
       .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data {
-        width: 100%;
+        width: 286.5px;
         height: 106.611px;
         float: left;
         margin-top: 1px;
         background: rgba(255, 255, 255, 0.3);
         background-color: rgba(255, 255, 255, 0.3);
         margin-top: 3px;
-        padding-left: 17px; }
+        padding-left: 17px;
+        margin-right: 3px; }
         .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data p {
           margin: 0;
           padding-top: 24px;
@@ -1697,9 +1702,34 @@ html {
           color: rgba(255, 255, 255, 0.8);
           font-family: Brandom_grotesque_black;
           font-size: 12px; }
+        .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data .block-print {
+          width: 110px;
+          position: relative;
+          left: 50%;
+          margin-left: -60px;
+          height: 60px;
+          margin-top: 20px;
+          cursor: pointer;
+          text-transform: uppercase; }
+        .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data .block-pdf {
+          width: 160px;
+          position: relative;
+          left: 50%;
+          margin-left: -85px;
+          height: 60px;
+          margin-top: 20px;
+          text-transform: uppercase; }
+        .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data .icon {
+          display: block;
+          width: 30px;
+          float: left;
+          cursor: pointer;
+          margin: 18px 0px 0px 15px; }
+        .beneficios .cont-center .column2 .data-container .beneficio-by-id .send-data .text-icon {
+          float: left; }
       .beneficios .cont-center .column2 .data-container .beneficio-by-id .b-map {
-        margin-left: 2px;
-        width: 321px;
+        margin-left: 3px;
+        width: 286.5px;
         float: left;
         height: 328px;
         background: rgba(255, 255, 255, 0.3);
