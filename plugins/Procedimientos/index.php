@@ -22,7 +22,10 @@ if(!class_exists("Procedimientos")):
         private $count;
 
 		public $_meta	= array(
-			'meta_tipo_proceso'
+			'meta_tipo_proceso',
+            'meta_proceso_pg',
+            'meta_proceso_perfiles'
+
 		);
 
 		public function __construct()
@@ -220,6 +223,13 @@ if(!class_exists("Procedimientos")):
         }
         public function saveMetaBox( $post_id ){
              // Checks save status
+
+        // echo "<pre>";
+        // print_r($_POST);
+        // echo "</pre>";
+        // die();
+
+
         $is_autosave = wp_is_post_autosave( $post_id );
         $is_revision = wp_is_post_revision( $post_id );
         $is_valid_nonce = ( isset( $_POST[ 'tipo_proceso_nonce' ] ) && wp_verify_nonce( $_POST[ 'tipo_proceso_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
@@ -233,6 +243,13 @@ if(!class_exists("Procedimientos")):
         if( isset( $_POST[ 'meta_tipo_proceso' ] ) ) {
             update_post_meta( $post_id, 'meta_tipo_proceso', sanitize_text_field( $_POST[ 'meta_tipo_proceso' ] ) );
         }
+        // if( isset( $_POST[ 'meta_proceso_perfiles' ] ) ) {
+        //     echo "<pre>";
+        //     print_r($_POST);
+        //     echo "</pre>";
+        //     die();
+        //     update_post_meta( $post_id, 'meta_proceso_perfiles', sanitize_text_field( $_POST[ 'meta_proceso_perfiles' ] ) );
+        // }
  
         }
 		public function init()
@@ -263,6 +280,7 @@ if(!class_exists("Procedimientos")):
         }
     	public function save_post($post_id)
     	{
+
             if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
             {
                 return;
@@ -278,7 +296,10 @@ if(!class_exists("Procedimientos")):
     		else
     		{
     			return;
-    		} 
+    		}
+            if(isset($_POST["meta_proceso_perfiles"])):
+                update_post_meta($post_id, 'meta_proceso_perfiles', json_encode($_POST["meta_proceso_perfiles"]));
+            endif;
     	}
         public function getView(){
             require plugin_dir_path(__FILE__).'/parts/main-view.php';

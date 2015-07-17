@@ -17,3 +17,11 @@
  		}
  	}
 }
+.form-perfiles{
+	margin-top: 2em;
+	h3{
+		background: black;
+		color: white;
+		@include pad(1em);
+	}
+}
