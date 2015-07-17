@@ -90,8 +90,8 @@ get_header(); ?>
 					<div class="block-pdf">
 						<a id="download">
 							<p class="text-icon">Descargar PDF</p>
+							<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
 						</a>
-						<img class="icon" src="http://www.deragopyan.com/wp-content/themes/deragopyan/img/icon-pdf2.png" alt="">
 					</div>
 
 						
@@ -248,7 +248,7 @@ get_header(); ?>
 		$('#download').click(function(event) {
 			event.preventDefault();
 			$.fn.plug("pdf",{get:"example"},function(a){
-				console.log(a);
+				window.open(a,"_blank");
 			});
 
 		});
