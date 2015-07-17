@@ -1,0 +1,243 @@
+.directorio-gerencia{
+	background: rgba(white, 0.2);
+	float: left;
+	min-height: 400px;
+	width: 100%;
+	margin-bottom: 1px;
+	padding-left: 82px;
+  	padding-right: 82px;
+  	padding-bottom: 20px;
+
+	.gerencia-title{
+		width: 152px;
+		margin: 0 auto;
+		height: 44px;
+		background:#B1005D;
+		text-align: center;
+		font-size: 11px;
+		font-family: Brandom_grotesque_bold;
+		color: rgba(white, 0.7);
+		position: relative;
+		margin-bottom: 25px;
+		text-transform: uppercase;
+		
+		&:before{
+			content: "";
+			border-bottom: 5px solid transparent;
+			border-top: 14px solid #B1005D;
+			border-left: 76px solid transparent;
+			border-right: 76px solid transparent;
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+		span{
+			position: absolute;
+			top: 33%;
+  			left: 33%;
+		}
+	}
+	.gerencia-personal{
+  		cursor: pointer;
+		height: 214px;
+		width: 175px;
+		float: left;
+		background: rgba(white, 0.7);
+		background-color: rgba(white, 0.7);
+		margin-left: 4px;
+		margin-top: 4px;
+		&.first{
+			margin-left: 0;
+		}
+		.image,.data-personal{
+			height: 107px;
+			width: 100%;
+			background: #CEC1C8;
+			background-size: cover!important;
+			background-position: center!important;
+		}
+		.data-personal{
+			background: none;
+			padding-left: 14px;
+			padding-right: 11px;
+			padding-top: 18px;
+
+			.subtitle{
+				color: #82807C;
+				font-family: Times_italic;
+				font-size: 12px;
+				font-style: italic;
+				margin-top: 2px;
+			}
+			p{
+				margin: 0;
+				font-family: Brandom_grotesque_medium;
+				font-size: 11px;
+				text-transform: uppercase;
+				color: #918B85;
+				border-bottom: 1px dashed rgba(#756F6B, 0.3);
+				padding-bottom: 5px;
+			}
+		}
+
+	}
+}
+
+
+.directorio-detalle{
+	@extend .directorio-gerencia;
+	display: none;
+	padding-bottom: 50px;
+	.detalle-empleado{
+		width: 302px;
+		margin: 0 auto;
+		.image-dt{
+			background: #CEC1C8;
+			height: 188px;
+			width: 100%;
+			background-size: cover!important;
+  			background-repeat: no-repeat!important;
+		}
+		.detalle-dt{
+			height: 230px;
+			width: 100%;
+			background: rgba(white, 0.7);
+			background-color: rgba(white, 0.7);
+
+			.col1-dt,.col2-dt{
+				float: left;
+				width: 151px;
+				height: 100%;
+				padding-left: 13px;
+				padding-right: 5px;
+				padding-top: 19px;
+
+				.subtitle{
+					color: #82807C;
+					font-family: Times_italic;
+					font-size: 12px;
+					font-style: italic;
+					margin-top: 2px;
+				}
+				p{
+					margin: 0;
+					font-family: Brandom_grotesque_medium;
+					font-size: 11px;
+					text-transform: uppercase;
+					color: #918B85;
+					border-bottom: 1px dashed rgba(#756F6B, 0.3);
+					padding-bottom: 5px;
+					&:last-child{
+						border-bottom: none;
+					}
+				}
+			}
+			.col2-dt{
+				padding-left: 7px;
+				padding-right: 24px;
+			}
+		}
+		.send-mail{
+			// display: none;
+			height: 41px;
+			margin-top: 2px;
+			background: rgba(white, 0.3);
+			background-color: rgba(white, 0.3);
+			position: relative;
+			cursor: pointer;
+
+	
+			p{
+				margin: 0;
+				font-family: Brandom_grotesque_medium;
+				font-size: 11px;
+				color: white;
+				line-height: 41px;
+				padding-left: 19px;
+
+				.icon-send{
+					background: url(img/send-mail.png) -2px -3px;
+					display: inline-block;
+					height: 25px;
+					width: 27px;
+					position: absolute;
+					top: 8px;
+					right: 12px;
+					.shadow{
+						height: 1px;
+						float: left;
+						width: 100%;
+						box-shadow: 2px 2px 9px rgba(0,0,0,0.5);
+					}					
+				}
+			}
+		}
+		.send-mail-box{
+			display: none;
+			height: 260.998px;
+			margin-top: 2px;
+			background: rgba(white, 0.3);
+			background-color: rgba(white, 0.3);
+			position: relative;
+			.icon-send{
+				background: url(img/send-mail.png) -2px -3px;
+				display: inline-block;
+				height: 25px;
+				width: 27px;
+				position: absolute;
+				top: 8px;
+				right: 12px;
+				cursor: pointer;
+			}
+			.box-form{
+				position: absolute;
+				width: 265px;
+				height: 217px;
+				left: 19px;
+				top: 31px;
+				p{
+					padding: 0;
+					margin: 0;
+					font-family: Brandom_grotesque_medium;
+					font-size: 11px;
+					color: white;
+					text-transform: uppercase;
+					margin-top: 8px;
+					margin-bottom: 3px;
+
+				}
+				input{
+					height: 24px;
+					border: 1px solid rgba(white, 0.7);
+					background: transparent;
+					width: 262px;
+					color: white;
+					font-family: Brandom_grotesque_medium;
+					padding-left: 5px;
+				}
+				textarea{
+					border: 1px solid rgba(white, 0.7);
+					background: transparent;
+					height: 63px;
+					width: 262px;
+					resize: none;
+					color: white;
+					font-family: Brandom_grotesque_medium;
+					padding-left: 5px;
+				}
+				button{
+					height: 24px;
+					width: 35.413px;
+					display: block;
+					background: #B1005D;
+					font-family: Brandom_grotesque_black;
+					color: rgba(white, 0.7);
+					border: 0;
+					cursor: pointer;
+					float: right;
+					margin-right: 3px;
+				}
+			}
+		}
+	}
+}
