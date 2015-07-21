@@ -28,7 +28,7 @@ get_header(); ?>
 <div class="background-sections deragopyan-container beneficios noticias">
 	<div class="cont-center ">
 		
-		<div class="column2 mr">
+		<div class="column2 mr background-noticias">
 			<div class="content-1">
 				<div class="carousel-principal">
 					<!-- item -->
