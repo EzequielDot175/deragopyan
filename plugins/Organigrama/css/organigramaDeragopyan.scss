@@ -2,6 +2,8 @@
 
 .organi-panel-admin{
 	background: white;
+	height: 100%;
+	position: relative;
 	h1{
 		padding: 1em;
 		margin: 0;
@@ -55,6 +57,118 @@
 			}
 		}
 	}
-	
+	.addEmployer{
+		cursor: pointer;
+	}
+	.google-visualization-orgchart-node{
+		border: 0;
+	}
+	.google-visualization-orgchart-nodesel{
+		border: 0;
+		background-color: #edf7ff;
+  		background: -webkit-gradient(linear, left top, left bottom, from(#edf7ff), to(#cde7ee));
+	}
+	.organi-selector{
+		position: absolute;
+		opacity: 0;
+		z-index: -1;
+		background: white;
+		top: 10%;
+		border: 5px solid #626262;
+		border-radius: 10px;
+
+		height: 700px;
+		width: 98%;
+
+		.menubar{
+			height: 50px;
+			h1{
+				float: left;
+			}
+			.dashicons-no-alt{
+				font-size: 4em;
+				float: right;
+				height: 50px;
+				width: 50px;
+				cursor: pointer;
+			}
+		}
+		.filters{
+			float: left;
+			width: 100%;
+			border-bottom: 5px solid #626262;
+			.block-filter{
+				float: left;
+				width: calc(100% / 4);
+				padding: 10px;
+				padding-bottom: 30px;
+				label{
+					font-size: 1.2em;
+  					padding: 10px;
+				}
+
+			}
+			.search-bar{
+				float: left;
+				width: 100%;
+				padding: 10px;
+				button{
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+		.results{
+			width: 100%;
+			float: left;
+			.overflow{
+
+				.block-result{
+					position:relative;
+					float: left;
+					width: 150px;
+					height: 210px;
+					background: rgba(#E2E2E2, 0.2);
+					border-radius: 5px;
+					margin-left: 5px;
+					cursor: pointer;
+					margin-top: 3px;
+					img{
+						width: 100px;
+						margin: 10px auto;
+						display: block;
+					}
+					span{
+						font-size: 1.2em;
+						display: block;
+						text-align: center;
+						padding-bottom: 10px;
+					}
+					.select{
+						display: none;
+						border: 0;
+						background: #446873;
+						margin: 0 auto;
+						color: white;
+						padding: 3px;
+						padding-left: 10px;
+						padding-right: 10px;
+						font-weight: bold;
+						cursor: pointer;
+						border-radius: 3px;
+					}
+					&.selected{
+						background: #92B4BE;
+						span{
+							color: white;
+						}
+						.select{
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
 	
 }

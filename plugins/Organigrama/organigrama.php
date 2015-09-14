@@ -16,7 +16,7 @@ if(!class_exists('OrgranigramaDeragopyan'))
 {
 	class OrgranigramaDeragopyan
 	{
-		
+		public static $PLUGIN;		
 		/**
 		 * Construct the plugin object
 		 */
@@ -27,7 +27,7 @@ if(!class_exists('OrgranigramaDeragopyan'))
 			//$WP_Plugin_Template_Settings = new LineaDeTiempoDeragopyanSettings();
 
 			// Register custom post types
-			
+			self::$PLUGIN = plugin_dir_url(__FILE__);
 			$plugin = plugin_basename(__FILE__);
 			add_action("wp_print_scripts", array($this,"addStylesOrgani"));
 			add_action("wp_print_scripts", array($this,"addScriptOrgani"));
@@ -36,6 +36,8 @@ if(!class_exists('OrgranigramaDeragopyan'))
 			add_action( 'wp_ajax_xhrajax',array($this,"xhrajax") );
 			add_action( 'wp_ajax_nopriv_getfrontorgani',array($this,"getFrontOrgani") );
 			add_action( 'wp_ajax_getfrontorgani',array($this,"getFrontOrgani") );
+			add_action( 'wp_ajax_nopriv_ajaxorganigrama', array($this,"ajax"));
+			add_action( 'wp_ajax_ajaxorganigrama', array($this,"ajax"));
 
 
 		} // END public function __construct
@@ -57,19 +59,42 @@ if(!class_exists('OrgranigramaDeragopyan'))
 		public function addStylesOrgani(){
 			wp_register_style("OrganigramaDeragopyan", plugins_url( "css/organigramaDeragopyan.css",__FILE__ ) );
 			wp_enqueue_style("OrganigramaDeragopyan");
+
 		}
 		public function addScriptOrgani(){
 			
 			wp_register_script("organigrama-script-1", plugins_url( "js/organigramaDeragopyan.js", __FILE__ ) );
 			wp_register_script("organigrama-script-2", plugins_url( "js/organigoogle.js", __FILE__ ) );
-			wp_register_script("organigrama-script-2", plugins_url( "js/organigoogle.js", __FILE__ ) );
+			wp_register_script("organigrama-script-3", plugins_url( "js/jquery.tmpl.min.js", __FILE__ ) );
 			wp_enqueue_script("organigrama-script-1");
-			wp_enqueue_script("organigrama-script-2");
+			// wp_enqueue_script("organigrama-script-2");
 			if(is_admin()):
 				wp_register_script("organigrama-modal", plugins_url( "js/modalOrgani.js", __FILE__ ) );
 				wp_enqueue_script("organigrama-modal");
 			endif;
 		}
+		public function ajax(){
+			switch ($_POST['get']) {
+				case 'filter':
+						self::filter();
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+		}
+		public static function filter(){
+			$vars = $_POST['data'];
+			$format = array();
+			foreach($vars as $k => $v):
+				$format[$v['name']] = $v['value']; 
+			endforeach;
+			print_r($format);
+			die();
+		}
+
+
 		public function ajaxFilterPersonal(){
 			global $wpdb;
 			$sql = "SELECT dir_nombre,dir_apellido,id FROM wp_directorio";

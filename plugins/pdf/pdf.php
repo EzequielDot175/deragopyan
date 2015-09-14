@@ -23,8 +23,15 @@ if(!class_exists('PDF'))
 			add_action( 'wp_ajax_nopriv_pdf',array($this,"ajax") );
 
 		} 
-		
+		private static function getUrl($asset){
+			return "http://".$_SERVER['HTTP_HOST']."/wp-content/uploads/beneficios/".$asset;
+		}
 		public static function html(){
+			global $wpdb;
+			$id = $_POST['id'];
+			$result = $wpdb->get_row('SELECT * FROM wp_beneficios WHERE id = '.$id);
+			$logo = self::getUrl($result->logo);
+			$foto = self::getUrl($result->foto);
 			$html = '
 				<html>
 					<head>
@@ -32,23 +39,20 @@ if(!class_exists('PDF'))
 							p{
 								color: #666;
 							}
-							
 						</style>
 					</head>
 					<body>
 						<div class="b-details">
 							<div class="row1" style="width: 300px; float:left; display: block">
 								<div style="width: 300px; float:left; display: block">
-									<img class="b-image" style="width: 150px; border-radius: 100%; margin-left:80px" src="http://www.deragopyan.com/wp-content/uploads/beneficios/24296de1807c8d64c7a4e9eac7afc687.jpg">
+									<img class="b-image" style="width: 150px; border-radius: 100%; margin-left:80px" src="'.$foto.'">
 								</div>
 								<div style="width:300px; float:left; display: block">
-									<img class="b-logo" style="width: 150px; margin-left:80px; margin-top: 10px; margin-bottom: 10px" src="http://www.deragopyan.com/wp-content/uploads/beneficios/1f94e78459c5cf76c861b6a1238fc651.png">
+									<img class="b-logo" style="width: 150px; margin-left:80px; margin-top: 10px; margin-bottom: 10px" src="'.$logo.'">
 								</div>
-								<div class="b-title" style="color:#666; text-transform:uppercase; text-align:center; font-size: 25px; margin: 10px 0;" >20% OFF</div>
-								<div class="b-pdescription" style="color: #666; text-align: justify" >Lorem ipsum dolor sit amet, consectet dolor sit amet, consectet.</div>
+								<div class="b-title" style="color:#666; text-transform:uppercase; text-align:center; font-size: 25px; margin: 10px 0;" >'.$result->nombre.'</div>
 							</div>
-							<div class="row2" style="width: 300px; float:left; display: block; text-align: justify" >
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+							<div class="row2" style="width: 300px; float:left; display: block; text-align: justify" >'.$result->descripcion_detallada.'</p>
 							</div>
 						</div>
 						<div class="b-map" id="googleMaps" style="width: 300px; heigth: 300px;">
@@ -56,7 +60,7 @@ if(!class_exists('PDF'))
 					</body>
 				</html>';
 
-			self::factory($html,"example.pdf");
+			self::factory($html,"beneficio.pdf");
 			
 		}
 		
@@ -93,7 +97,7 @@ if(!class_exists('PDF'))
 		}
 		public function ajax(){
 			switch ($_POST['get']) {
-				case 'example':
+				case 'pdf':
 					self::html();
 					break;
 				

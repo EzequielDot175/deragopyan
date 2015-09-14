@@ -118,7 +118,7 @@ get_header(); ?>
 <script>
 	jQuery(document).ready(function($) {
 
-
+		window.parent.currentId = 0;
 
 		$('.item-beneficio').hover(function() {
 			$(this).children('.b-mask-bg').animate({opacity:1},500);
@@ -157,6 +157,8 @@ get_header(); ?>
 				data.description = content.children('.b-description').text();
 				data.longDescription = content.children('.b-l_description').val();
 				data.map = content.children('.b-map').val();
+			window.parent.currentId = content.children('.b-id').val();
+
 
 			var row1 = $('.beneficio-by-id').children('.b-details').children('.row1');
 			var row2 = $('.beneficio-by-id').children('.b-details').children('.row2');
@@ -242,9 +244,8 @@ get_header(); ?>
 
 		$('#download').click(function(event) {
 			event.preventDefault();
-			$.fn.plug("pdf",{get:"example"},function(a){
-				//window.open(a,"_blank");
-				console.log(a);
+			$.fn.plug("pdf",{get:"pdf",id:currentId},function(a){
+				window.open(a,"_blank");
 			});
 
 		});
