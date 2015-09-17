@@ -1,8 +1,8 @@
 <!--busqueda-->
 	<div class="busqueda-avanzada">
 		<div  class="boton-sidebar">
-			<img id="mostrar-sidebar" src="<?php echo(IMG); ?>flecha-galerry-bottom.png" alt="">
-			<img id="ocultar-sidebar" class="oculta" src="<?php echo(IMG); ?>flecha-galerry-top.png" alt="">
+			<img id="mostrar-sidebar" src="<?php bloginfo('template_directory') ?>/img/flecha-galerry-bottom.png" alt="">
+			<img id="ocultar-sidebar" class="oculta" src="<?php bloginfo('template_directory') ?>/img/flecha-galerry-top.png" alt="">
 			<div class="search">
 				<?php get_search_form(); ?>
 			</div>

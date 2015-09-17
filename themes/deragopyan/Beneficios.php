@@ -68,7 +68,7 @@ get_header(); ?>
 						<div class="send-data">
 							<div id ="imprimirA" class="block-print">
 								<p class="text-icon">Imprimir</p>
-								<img class="icon" src="<?php echo(IMG); ?>icon-print2.png" alt="">
+								<img class="icon" src="<?php bloginfo('template_directory') ?>/img/icon-print2.png" alt="">
 							</div>
 							<script type="text/javascript">
 								$( document ).ready(function() {
@@ -87,7 +87,7 @@ get_header(); ?>
 							<div class="block-pdf">
 								<a id="download">
 									<p class="text-icon">Descargar PDF</p>
-									<img class="icon" src="<?php echo(IMG); ?>icon-pdf2.png" alt="">
+									<img class="icon" src="<?php bloginfo('template_directory') ?>/img/icon-pdf2.png" alt="">
 								</a>
 							</div>	
 						</div>

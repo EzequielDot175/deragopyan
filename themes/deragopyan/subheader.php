@@ -18,10 +18,10 @@
 			<img src="<?php bloginfo('template_directory') ?>/img/mail.png" alt="email">
 		</a>
 		<a href="">
-			<img src="<?php echo(IMG); ?>/world.png" alt="world">
+			<img src="<?php bloginfo('template_directory') ?>/img/world.png" alt="world">
 		</a>
 		<a href="">
-			<img src="<?php echo(IMG); ?>/shutdown.png" alt="shutdown">
+			<img src="<?php bloginfo('template_directory') ?>/img/shutdown.png" alt="shutdown">
 		</a>
 	</div>
 
@@ -32,7 +32,7 @@
 			<div class="calendar">
 	 			<div class="calendar-img"></div>
 	 			<span><?php $tiempo->fecha(); ?></span>
-	 			<img src="<?php echo(IMG); ?>humedad-02.png" alt="" style="position:relative;top:-10px;">
+	 			<img src="<?php bloginfo('template_directory') ?>/img/humedad-02.png" alt="" style="position:relative;top:-10px;">
 	 		</div>
 			<div class="temperature"><span>T<?php $tiempo->temperatura(); ?>°</span></div>
 	 		<div class="humedad">
