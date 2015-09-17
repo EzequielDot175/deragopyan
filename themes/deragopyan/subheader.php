@@ -15,13 +15,13 @@
 <div class="cont-center subcontrols">
 	<div class="cell one">
 		<a href="">
-			<img src="<?php echo(IMG); ?>/mail.png" alt="email">
+			<img src="<?php echo(IMG); ?>mail.png" alt="email">
 		</a>
 		<a href="">
-			<img src="<?php echo(IMG); ?>/world.png" alt="world">
+			<img src="<?php echo(IMG); ?>world.png" alt="world">
 		</a>
 		<a href="">
-			<img src="<?php echo(IMG); ?>/shutdown.png" alt="shutdown">
+			<img src="<?php echo(IMG); ?>shutdown.png" alt="shutdown">
 		</a>
 	</div>
 
