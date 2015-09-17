@@ -1,0 +1,215 @@
+.procedimientos-content{
+	background: rgba(#B28AAA, 0.5);
+	background-color: rgba(#B28AAA, 0.5);
+	height: 700px;
+	.center-procedimientos{
+		min-height: 600px;
+		width: 1101px;
+		margin: 0 auto;
+
+		.column1,.column2,.column3{
+			height: 100%;
+			min-height: 600px;
+			float: left;
+			margin-top: 5px;
+		}
+
+		.column1,.column2{
+			width: 197px;
+		}
+		.column3{
+			width: 702px;
+			background: rgba(white, 0.55);
+			background-color: rgba(white, 0.55);
+			h3{
+				width: 661px;
+				float: left;
+				margin-left: 20px;
+				margin-top: 23px;
+				color: rgba(#B0005C, 0.7);
+				border-bottom: 1px dashed ;
+				font-family: Brandom_grotesque_bold;
+			}
+			.data-categories{
+				width: 661px;
+				margin-left: 20px;				
+				margin-top: 30px;
+				.item-box-category{
+					margin-left: 13px;
+					margin-bottom: 13px;
+					text-transform: uppercase;
+					float: left;
+					width: 153px;
+					height: 80px;
+					background: rgba(white, 0.7);
+					background-color: rgba(white, 0.7);
+					-webkit-box-shadow: 0 1px 11px rgba(black, 0.2);
+					box-shadow: 0 1px 11px rgba(black, 0.2);
+					font-family: Brandom_grotesque_medium;
+					color: #918B85;
+					text-align: center;
+					cursor: pointer;
+					position: relative;
+					span{
+						position: absolute;
+						width: 100%;
+						left: 0;
+					}
+					&:hover{
+						color: rgba(#B0005C, 0.9);
+					}
+					&.first{
+						margin-left: 0;
+					}
+				}
+			}
+			.data-categories-2{
+				float: left;
+				.item-data-box{
+					width: 217px;
+					min-height: 274px;
+					float: left;
+					position: relative;
+					background: rgba(white, 0.7);
+					background-color: rgba(white, 0.7);
+					margin-left: 4px;
+					
+					.title-type-section{
+						width: 184px;
+						margin: 0 auto;
+					}
+					.title-type-section{
+						font-family: Brandom_grotesque_medium;
+						font-size: 13px;
+						margin-left: 14px;
+						margin-top: 31px;
+						border-bottom: 1px solid #CAC6C5;
+						color: #87807B;
+					}
+					.content-by-filter{
+						width: 184px;
+						margin-left: 14px;
+						margin-top: 15px;
+						p{
+							font-family: Brandom_grotesque_medium;
+							font-size: 11.5px;
+							color: #87807B;
+							border-bottom: 1px dashed #CAC6C5;
+							margin-top: 20px;
+							cursor: pointer;
+							&:hover{
+								color: rgba(#B0005C, 0.9);
+							}
+							&:first-child{
+								margin-top: 0;
+							}
+						}
+					}
+					&:first-child{
+						margin-left: 0px;
+						}
+					.icon-library{
+						background: url(img/procedimientos-05.png);
+						height: 25px;
+						width: 27px;
+						position: absolute;
+						right: 6px;
+						top: 9px;
+						background-position: -3px -8px;
+
+					}
+				}
+			}
+			.content-text{
+				font-family: Brandom_grotesque_regular;
+				font-size: 14px;
+				color: #7C6B6B;
+			}
+		}
+		.column2{
+			margin-right: 1px;
+			.fullwidth{
+				width: 100%;
+			}
+			.box-l{
+				height: 39px;
+			}
+			.list-categories{
+				padding: 0;
+				margin: 0;
+				margin-top: 1px;
+				list-style-type: none;
+				font-family: Brandom_grotesque_bold;
+				color: rgba(white, 0.65);
+
+				
+				.item-category{
+					font-size: 12px;
+					height: 31px;
+					background: rgba(white, 0.25);
+					background-color: rgba(white, 0.25);
+					position: relative;
+					margin-top: 1px;
+					cursor: pointer;
+					.text-category{
+						position: absolute;
+						text-transform: uppercase;
+						top: 8px;
+						left: 17px;
+
+					}
+				}
+			}
+			.btn-procedimientos{
+				border: none;
+				color: white;
+				background: rgba(255,255,255,0.35);
+				position: relative;
+				font-family: Brandom_grotesque_bold;
+				font-size: 12px;
+				height: 39px;
+				.text-proc{
+					position: absolute;
+					text-transform: uppercase;
+					top: 15px;
+					left: 17px;
+
+				}
+				.triangle-up{
+					&:before{
+						  content: "";
+						  border-top: 0px solid transparent;
+						  border-bottom: 7px solid white;
+						  border-left: 5px solid transparent;
+						  border-right: 5px solid transparent;
+						  position: absolute;
+						  bottom: 17px;
+						  right: 16px;
+					}
+				}
+				.triangle-down{
+					&:before{
+						content: "";
+						border-top: 7px solid white;
+						border-bottom: 0px solid transparent;
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						position: absolute;
+						bottom: 17px;
+						right: 16px;
+					}
+				}
+				&.operaciones-btn{
+					margin-top: 1px;
+					.text-proc{
+						margin-top: 1px;
+						top: 10px;
+					}
+				}
+			}
+		}
+		.column1{
+			margin-right: 4px;
+		}
+	}
+}

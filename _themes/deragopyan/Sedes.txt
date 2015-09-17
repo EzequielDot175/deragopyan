@@ -1,0 +1,46 @@
+Sedes 
+
+	+ Paginado de cada sede aparte luego de click
+		- Formulario de contacto
+
+	+ UBICACION (GOOGLE MAPS - COMO LLEGAR - COORDENADAS )
+
+FOTOGRAFIA
+ESPECIALIDADES (CON ICONOS)
+	+ Seccion de carga aparte
+	+ Icon default 
+
+
+HORARIOS
+	+ 4 inputs Horario
+	+ Multiselect Dia
+MEDIOS DE CONTACTOS
+	+ Email
+	+ Telefono
+	+ Redes sociales
+
+
+* MEJORAS UNA VEZ TERMINADO 
+	+ USAR API DE GOOGLE PARA INGRESAR LA DIRECCION Y QUE EL MAPA SE GENERE SOLO
+	+ EL UPLOAD DE FOTOGRAFIA SE PUEDE MEJORAR CON UN SISTEMA DE TIPO DRAG ON DROP PARA HACER UPLOAD AUTOMATICO.
+
+
+INFORMACION DESPLEGABLE ----
+
+
+
+Directorio 
+	Back
+	ABM
+		+ Puesto
+		+ Gerencia / Area
+		+ Grupo de trabajo
+
+	Front
+		+ Orden alfabetico / apellido nombre dentro de orden alfabetico Categorias
+		+ Busqueda por nombre
+		+ Filtros por los tres tipos de ABM descriptos
+
+
+
+
