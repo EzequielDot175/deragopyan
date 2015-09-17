@@ -21,7 +21,7 @@
 			<img src="<?php echo(IMG); ?>world.png" alt="world">
 		</a>
 		<a href="">
-			<img src="<?php echo(IMG); ?>shutdown.png" alt="shutdown">
+			<img src="<?php echo(IMG); ?>/shutdown.png" alt="shutdown">
 		</a>
 	</div>
 
